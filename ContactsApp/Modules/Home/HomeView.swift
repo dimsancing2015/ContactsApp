@@ -70,8 +70,8 @@ extension HomeView: HomeViewPresenterInterface{
         contactsListing = contactsList
     }
     
-    func alert () {
-        let alert = UIAlertController(title: "ContactsApp", message: "Check Your Internet Connection!", preferredStyle: UIAlertController.Style.alert)
+    func alert(message: String) {
+        let alert = UIAlertController(title: "ContactsApp", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

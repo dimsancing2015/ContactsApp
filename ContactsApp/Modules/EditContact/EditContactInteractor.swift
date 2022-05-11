@@ -8,7 +8,7 @@
 import Foundation
 
 final class EditContactInteractor: InteractorInterface {
-
+    
     weak var presenter: EditContactPresenterInteractorInterface!
     var service: NetworkManager!
     var contactsRepository = ContactsRepository()
@@ -23,8 +23,7 @@ extension EditContactInteractor: EditContactInteractorPresenterInterface {
     func updateContact(id: Int, firstName: String, lastName: String){
         service.updateContact(id: id, firstName: firstName, lastName: lastName){[weak self] result in
             switch result {
-            case .success(let data):
-                print("update successful >>>", data)
+            case .success( _):
                 self!.updateLocalStorage(id: id, firstName: firstName, lastName: lastName)
                 self!.presenter.updateContact(message: "Updated Contact Information")
             case .failure(let error):
@@ -37,7 +36,6 @@ extension EditContactInteractor: EditContactInteractorPresenterInterface {
     
     private func updateLocalStorage(id: Int, firstName: String, lastName: String) {
         let contacts = contactsRepository.findUser(id: id)
-        print(" contcats form core >>>", contacts?.id)
         if contacts!.id != nil {
             contactsRepository.update(id: id, firstName: firstName, lastName: lastName)
         }

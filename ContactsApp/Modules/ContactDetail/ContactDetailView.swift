@@ -9,30 +9,28 @@ import Foundation
 import UIKit
 
 final class ContactDetailView: UIViewController, ViewInterface {
-
+    
     @IBOutlet weak var imgProfile: UIImageView!
-//    @IBOutlet weak var txtMobile: UITextField!
-//    @IBOutlet weak var txtEmail: UITextField!
+    //    @IBOutlet weak var txtMobile: UITextField!
+    //    @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var lbName: UILabel!
-    var presenter: ContactDetailPresenterViewInterface!
-
     @IBOutlet weak var btnEdit: UIButton!
     
+    var presenter: ContactDetailPresenterViewInterface!
     var contactsDetail: Datum? {
         didSet {}
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         lbName.text = String(contactsDetail!.firstName) + String(contactsDetail!.lastName)
-//        txtEmail.text = contactsDetail?.email
-//        txtMobile.text = String(contactsDetail!.id)
+        //        txtEmail.text = contactsDetail?.email
+        //        txtMobile.text = String(contactsDetail!.id)
         imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contactsDetail!.avatar )!))
         
     }
@@ -45,9 +43,9 @@ final class ContactDetailView: UIViewController, ViewInterface {
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    
 }
 
 extension ContactDetailView: ContactDetailViewPresenterInterface {
-
+    
 }

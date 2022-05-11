@@ -12,7 +12,7 @@ import RxCocoa
 import UIKit
 
 protocol FetchApiServices {
-
+    
     func getContactsList(completion: @escaping (Result<ContactsList?, Error>) -> ())
     func updateContact(id: Int, firstName: String, lastName: String, completion: @escaping(Result<UpdateResponse?, Error>) -> ())
     func createContact(firstName: String, lastName: String, completion: @escaping(Result<CreateResponse?, Error>) -> ())
@@ -22,7 +22,7 @@ protocol FetchApiServices {
 final class NetworkManager: FetchApiServices {
     
     private let provider = MoyaProvider<NetworkService>(plugins: [NetworkLoggerPlugin()])
-   
+    
     
     func request<T: Codable>(networkService: NetworkService, completion: @escaping (Result<T?, Error>) -> ()) {
         
@@ -36,17 +36,17 @@ final class NetworkManager: FetchApiServices {
                         let results = try JSONDecoder().decode(T.self, from: response.data)
                         completion(.success(results))
                     }
-                   
-            }
+                    
+                }
                 catch let error {
                     
                     completion(.failure(error))
                 }
             case let .failure(error):
-            
+                
                 completion(.failure(error))
+            }
         }
-    }
     }
     func getContactsList(completion: @escaping (Result<ContactsList?, Error>) -> ()){
         request(networkService: .getContactList, completion: completion)

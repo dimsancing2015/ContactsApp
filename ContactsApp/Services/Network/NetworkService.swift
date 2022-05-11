@@ -19,7 +19,7 @@ extension NetworkService : TargetType {
     public var baseURL: URL {
         
         let baseURL: String = "https://reqres.in/api/"
-
+        
         switch self {
         case .getContactList:
             return URL(string: baseURL)!
@@ -32,7 +32,7 @@ extension NetworkService : TargetType {
     
     public var path: String {
         switch self {
-        
+            
         case .getContactList:
             return "users"
         case .updateContact(let id, _, _):
@@ -44,7 +44,7 @@ extension NetworkService : TargetType {
     
     public var method: Moya.Method {
         switch self {
-        
+            
         case .getContactList:
             return .get
         case .updateContact:
@@ -61,7 +61,7 @@ extension NetworkService : TargetType {
     public var task: Task {
         
         switch self {
-        
+            
         case .getContactList:
             return .requestParameters(parameters: ["page": "2"], encoding: URLEncoding.default)
         case .updateContact(_, let firstName, let LastName):
@@ -73,15 +73,15 @@ extension NetworkService : TargetType {
     
     
     public var headers: [String : String]? {
-       
+        
         var parameters: [String: String] = ["":""]
         
         parameters = [
-                "Content-Type": "application/json",
-                "Accept": "application/json"]
-    
+            "Content-Type": "application/json",
+            "Accept": "application/json"]
         
-         return parameters
+        
+        return parameters
     }
 }
 

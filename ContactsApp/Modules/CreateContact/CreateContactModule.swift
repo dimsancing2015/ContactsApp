@@ -10,13 +10,13 @@ import UIKit
 // MARK: - router
 
 protocol CreateContactRouterPresenterInterface: RouterPresenterInterface {
-
+    
 }
 
 // MARK: - presenter
 
 protocol CreateContactPresenterRouterInterface: PresenterRouterInterface {
-
+    
 }
 
 protocol CreateContactPresenterInteractorInterface: PresenterInteractorInterface {
@@ -44,12 +44,12 @@ protocol CreateContactViewPresenterInterface: ViewPresenterInterface {
 // MARK: - name builder
 
 final class CreateContactModule: ModuleInterface {
-
+    
     typealias View = CreateContactView
     typealias Presenter = CreateContactPresenter
     typealias Router = CreateContactRouter
     typealias Interactor = CreateContactInteractor
-
+    
     func build() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let contactsRepository = ContactsRepository()
@@ -58,11 +58,11 @@ final class CreateContactModule: ModuleInterface {
         let interactor = Interactor(service: service, contactsRepository: contactsRepository)
         let presenter = Presenter()
         let router = Router()
-
+        
         self.assemble(view: view, presenter: presenter, router: router, interactor: interactor)
-
+        
         router.viewController = view
-
+        
         return view
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class EditContactView: UIViewController, ViewInterface {
-
+    
     
     @IBOutlet weak var txtFirstName: UITextField!
     @IBOutlet weak var txtLastName: UITextField!
@@ -20,9 +20,10 @@ final class EditContactView: UIViewController, ViewInterface {
     var contactsDetail: Datum? {
         didSet{}
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +34,7 @@ final class EditContactView: UIViewController, ViewInterface {
         txtMobile.text = String(contactsDetail!.id)
         imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contactsDetail!.avatar )!))
     }
+    
     @IBAction func btnDone(_ sender: Any) {
         self.presenter.saveEditContact(id: contactsDetail!.id, firstName: txtFirstName.text! , lastName: txtLastName.text!)
     }
@@ -44,15 +46,10 @@ final class EditContactView: UIViewController, ViewInterface {
 
 extension EditContactView: EditContactViewPresenterInterface {
     func displayUpdateContact(message: String){
-       
         let alert = UIAlertController(title: "ContactsApp", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
             self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func displayUpdateFail(){
-        // alert
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 final class ContactDetailInteractor: InteractorInterface {
-
+    
     weak var presenter: ContactDetailPresenterInteractorInterface!
     var service: NetworkManager!
     

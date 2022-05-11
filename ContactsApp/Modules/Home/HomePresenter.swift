@@ -23,6 +23,10 @@ extension HomePresenter: HomePresenterInteractorInterface {
     func contactsList(contactsList: ContactsList){
         view.displayContactsList(contactsList: contactsList)
     }
+    
+    func failFetchContactsList(message: String) {
+        view.alert(message: message)
+    }
 }
 
 extension HomePresenter: HomePresenterViewInterface {
@@ -31,7 +35,7 @@ extension HomePresenter: HomePresenterViewInterface {
         if InternetConnectionManager.isConnectedToNetwork(){
             interactor.fetchContactsListing()
         }else{
-            view.alert()
+            view.alert(message: "Check Your Internet Connection!")
         }
         
     }

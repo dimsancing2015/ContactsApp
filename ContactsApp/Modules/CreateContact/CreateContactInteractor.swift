@@ -8,7 +8,7 @@
 import Foundation
 
 final class CreateContactInteractor: InteractorInterface {
-
+    
     weak var presenter: CreateContactPresenterInteractorInterface!
     var service: NetworkManager!
     var contactsRepository = ContactsRepository()
@@ -25,7 +25,6 @@ extension CreateContactInteractor: CreateContactInteractorPresenterInterface {
         service.createContact(firstName: firstName, lastName: lastName){[weak self] result in
             switch result {
             case .success(let data):
-                print(" Create Successful >>", data)
                 self!.contactsRepository.create(id: Int(data!.id)!, firstName: firstName, lastName: lastName)
                 self!.presenter.doneCreate(message: "Created New Contact")
             case .failure(let error):

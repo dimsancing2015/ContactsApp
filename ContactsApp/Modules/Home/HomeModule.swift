@@ -22,7 +22,7 @@ protocol HomePresenterRouterInterface: PresenterRouterInterface {
 
 protocol HomePresenterInteractorInterface: PresenterInteractorInterface {
     func contactsList(contactsList: ContactsList)
-
+    func failFetchContactsList(message: String)
 }
 
 protocol HomePresenterViewInterface: PresenterViewInterface {
@@ -41,8 +41,7 @@ protocol HomeInteractorPresenterInterface: InteractorPresenterInterface {
 
 protocol HomeViewPresenterInterface: ViewPresenterInterface {
     func displayContactsList(contactsList: ContactsList)
-    func alert()
-    
+    func alert(message: String)
 }
 
 
@@ -57,10 +56,10 @@ final class HomeModule: ModuleInterface {
 
     func build() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let userRepository = UserRepository()
+        //let contactsRepository = ContactsRepository()
         let view = storyboard.instantiateViewController(withIdentifier: "HomeView") as! HomeView
         let service = NetworkManager()
-       // let interactor = Interactor(service: service, userRepository: userRepository)
+       // let interactor = Interactor(service: service, contactsRepository: contactsRepository)
         let interactor = Interactor(service: service)
         let presenter = Presenter()
         let router = Router()

@@ -29,6 +29,7 @@ extension HomeInteractor: HomeInteractorPresenterInterface {
                 self!.presenter.contactsList(contactsList: data!)
             case .failure(let error):
                 print(" Error contacts listing >>>", error)
+                self?.presenter.failFetchContactsList(message: "Failed Contacts Listing")
             }
         }
     }

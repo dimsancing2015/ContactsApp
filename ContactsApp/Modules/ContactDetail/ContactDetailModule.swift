@@ -16,11 +16,11 @@ protocol ContactDetailRouterPresenterInterface: RouterPresenterInterface {
 // MARK: - presenter
 
 protocol ContactDetailPresenterRouterInterface: PresenterRouterInterface {
-
+    
 }
 
 protocol ContactDetailPresenterInteractorInterface: PresenterInteractorInterface {
-
+    
 }
 
 protocol ContactDetailPresenterViewInterface: PresenterViewInterface {
@@ -30,25 +30,25 @@ protocol ContactDetailPresenterViewInterface: PresenterViewInterface {
 // MARK: - interactor
 
 protocol ContactDetailInteractorPresenterInterface: InteractorPresenterInterface {
-
+    
 }
 
 // MARK: - view
 
 protocol ContactDetailViewPresenterInterface: ViewPresenterInterface {
-
+    
 }
 
 
 // MARK: - name builder
 
 final class ContactDetailModule: ModuleInterface {
-
+    
     typealias View = ContactDetailView
     typealias Presenter = ContactDetailPresenter
     typealias Router = ContactDetailRouter
     typealias Interactor = ContactDetailInteractor
-
+    
     func build(contactDetail: Datum) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "ContactDetailView") as! ContactDetailView
@@ -57,11 +57,11 @@ final class ContactDetailModule: ModuleInterface {
         let interactor = Interactor(service: service)
         let presenter = Presenter()
         let router = Router()
-
+        
         self.assemble(view: view, presenter: presenter, router: router, interactor: interactor)
-
+        
         router.viewController = view
-
+        
         return view
     }
 }

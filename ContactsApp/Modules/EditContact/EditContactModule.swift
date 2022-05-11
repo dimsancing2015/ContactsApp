@@ -10,13 +10,13 @@ import UIKit
 // MARK: - router
 
 protocol EditContactRouterPresenterInterface: RouterPresenterInterface {
-
+    
 }
 
 // MARK: - presenter
 
 protocol EditContactPresenterRouterInterface: PresenterRouterInterface {
-
+    
 }
 
 protocol EditContactPresenterInteractorInterface: PresenterInteractorInterface {
@@ -36,7 +36,7 @@ protocol EditContactInteractorPresenterInterface: InteractorPresenterInterface {
 // MARK: - view
 
 protocol EditContactViewPresenterInterface: ViewPresenterInterface {
-
+    
     func displayUpdateContact(message: String)
 }
 
@@ -44,12 +44,12 @@ protocol EditContactViewPresenterInterface: ViewPresenterInterface {
 // MARK: - name builder
 
 final class EditContactModule: ModuleInterface {
-
+    
     typealias View = EditContactView
     typealias Presenter = EditContactPresenter
     typealias Router = EditContactRouter
     typealias Interactor = EditContactInteractor
-
+    
     func build(contactsDetail: Datum) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let contactsRepository = ContactsRepository()
@@ -59,11 +59,11 @@ final class EditContactModule: ModuleInterface {
         let interactor = Interactor(service: service, contactsRepository: contactsRepository)
         let presenter = Presenter()
         let router = Router()
-
+        
         self.assemble(view: view, presenter: presenter, router: router, interactor: interactor)
-
+        
         router.viewController = view
-
+        
         return view
     }
 }
