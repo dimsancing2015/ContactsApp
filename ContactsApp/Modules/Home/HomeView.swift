@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITableViewDataSource {
-
+    
     var presenter: HomePresenterViewInterface!
     @IBOutlet weak var tbView: UITableView!
     
@@ -44,7 +44,6 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(" listing value >>>", contactsListing?.data.count)
         if contactsListing?.data.count == 0 || contactsListing?.data == nil {
             return 0
         }
@@ -61,16 +60,19 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presenter.contactsDetail(contactDetail: (contactsListing?.data[indexPath.row])!)
     }
-
+    
 }
 
 extension HomeView: HomeViewPresenterInterface{
     
     
     func displayContactsList(contactsList: ContactsList){
-        print( "HOme view contactList >>>>", contactsList.data.count)
         contactsListing = contactsList
     }
     
-    
+    func alert () {
+        let alert = UIAlertController(title: "ContactsApp", message: "Check Your Internet Connection!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

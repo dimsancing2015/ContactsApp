@@ -24,7 +24,6 @@ protocol ContactDetailPresenterInteractorInterface: PresenterInteractorInterface
 }
 
 protocol ContactDetailPresenterViewInterface: PresenterViewInterface {
-    func start()
     func goToEdit(contactsDetail: Datum)
 }
 
@@ -52,11 +51,9 @@ final class ContactDetailModule: ModuleInterface {
 
     func build(contactDetail: Datum) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let userRepository = UserRepository()
         let view = storyboard.instantiateViewController(withIdentifier: "ContactDetailView") as! ContactDetailView
         view.contactsDetail = contactDetail
         let service = NetworkManager()
-       // let interactor = Interactor(service: service, userRepository: userRepository)
         let interactor = Interactor(service: service)
         let presenter = Presenter()
         let router = Router()

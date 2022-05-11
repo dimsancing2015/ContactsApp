@@ -22,8 +22,6 @@ class HomeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        print(" HOne cell >>>>")
     }
     
     

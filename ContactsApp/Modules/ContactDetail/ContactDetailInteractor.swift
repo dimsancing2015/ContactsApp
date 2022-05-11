@@ -11,16 +11,12 @@ final class ContactDetailInteractor: InteractorInterface {
 
     weak var presenter: ContactDetailPresenterInteractorInterface!
     var service: NetworkManager!
-    //var userRepository = UserRepository()
     
     init(service: NetworkManager) {
         self.service = service
-        //self.userRepository = userRepository
     }
 }
 
 extension ContactDetailInteractor: ContactDetailInteractorPresenterInterface {
-    func createContact(){
-        //save in local DB
-    }
+    
 }

@@ -22,7 +22,18 @@ final class CreateContactInteractor: InteractorInterface {
 extension CreateContactInteractor: CreateContactInteractorPresenterInterface {
     
     func createContact(firstName: String, lastName: String){
-        contactsRepository.create(id: 8, firstName: firstName, lastName: lastName)
-        presenter.doneCreate()
+        service.createContact(firstName: firstName, lastName: lastName){[weak self] result in
+            switch result {
+            case .success(let data):
+                print(" Create Successful >>", data)
+                self!.contactsRepository.create(id: Int(data!.id)!, firstName: firstName, lastName: lastName)
+                self!.presenter.doneCreate(message: "Created New Contact")
+            case .failure(let error):
+                print(" Create Failed >>>", error)
+                self!.presenter.doneCreate(message: "Failed New Contact")
+            }
+        }
+        
+        
     }
 }

@@ -28,7 +28,12 @@ extension HomePresenter: HomePresenterInteractorInterface {
 extension HomePresenter: HomePresenterViewInterface {
 
     func start() {
-        interactor.fetchContactsListing()
+        if InternetConnectionManager.isConnectedToNetwork(){
+            interactor.fetchContactsListing()
+        }else{
+            view.alert()
+        }
+        
     }
     
     func contactsDetail(contactDetail: Datum){

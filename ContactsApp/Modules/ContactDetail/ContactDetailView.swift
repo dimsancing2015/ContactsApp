@@ -25,12 +25,10 @@ final class ContactDetailView: UIViewController, ViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.presenter.start()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(" Contact Detail >>>", contactsDetail)
         
         lbName.text = String(contactsDetail!.firstName) + String(contactsDetail!.lastName)
 //        txtEmail.text = contactsDetail?.email

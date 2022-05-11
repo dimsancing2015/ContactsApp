@@ -20,8 +20,7 @@ protocol EditContactPresenterRouterInterface: PresenterRouterInterface {
 }
 
 protocol EditContactPresenterInteractorInterface: PresenterInteractorInterface {
-    func updateSuccess()
-    func updateFail()
+    func updateContact(message: String)
 }
 
 protocol EditContactPresenterViewInterface: PresenterViewInterface {
@@ -38,8 +37,7 @@ protocol EditContactInteractorPresenterInterface: InteractorPresenterInterface {
 
 protocol EditContactViewPresenterInterface: ViewPresenterInterface {
 
-    func displayUpdateSuccess()
-    func displayUpdateFail()
+    func displayUpdateContact(message: String)
 }
 
 

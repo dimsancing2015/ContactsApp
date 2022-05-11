@@ -26,10 +26,10 @@ extension EditContactInteractor: EditContactInteractorPresenterInterface {
             case .success(let data):
                 print("update successful >>>", data)
                 self!.updateLocalStorage(id: id, firstName: firstName, lastName: lastName)
-                self!.presenter.updateSuccess()
+                self!.presenter.updateContact(message: "Updated Contact Information")
             case .failure(let error):
                 print("update fial >>>", error)
-                self!.presenter.updateFail()
+                self!.presenter.updateContact(message: "Failed Contact Information")
             }
             
         }

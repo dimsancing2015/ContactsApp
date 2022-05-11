@@ -24,10 +24,6 @@ extension ContactDetailPresenter: ContactDetailPresenterInteractorInterface {
 }
 
 extension ContactDetailPresenter: ContactDetailPresenterViewInterface {
-
-    func start() {
-
-    }
     
     func goToEdit(contactsDetail: Datum) {
         router.goToEdit(contactsDetail: contactsDetail)

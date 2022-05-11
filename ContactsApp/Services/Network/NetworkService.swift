@@ -11,6 +11,7 @@ enum NetworkService{
     
     case getContactList
     case updateContact(id: Int, firstName: String, lastName: String)
+    case createContact(firstName: String, lastName: String)
     
 }
 
@@ -24,6 +25,8 @@ extension NetworkService : TargetType {
             return URL(string: baseURL)!
         case .updateContact(id: _, firstName: _, lastName: _):
             return URL(string: baseURL)!
+        case .createContact(firstName: _, lastName: _):
+            return URL(string: baseURL)!
         }
     }
     
@@ -32,8 +35,10 @@ extension NetworkService : TargetType {
         
         case .getContactList:
             return "users"
-        case .updateContact(let id):
+        case .updateContact(let id, _, _):
             return "users/\(id)"
+        case .createContact( _, _):
+            return "users"
         }
     }
     
@@ -44,6 +49,8 @@ extension NetworkService : TargetType {
             return .get
         case .updateContact:
             return .put
+        case .createContact:
+            return .post
         }
     }
     
@@ -59,6 +66,8 @@ extension NetworkService : TargetType {
             return .requestParameters(parameters: ["page": "2"], encoding: URLEncoding.default)
         case .updateContact(_, let firstName, let LastName):
             return .requestParameters(parameters: ["name" : firstName + LastName], encoding: URLEncoding.queryString)
+        case .createContact(let firstName, let LastName):
+            return .requestParameters(parameters: ["firstName" : firstName ,"lastName": LastName], encoding: URLEncoding.queryString)
         }
     }
     
@@ -68,8 +77,6 @@ extension NetworkService : TargetType {
         var parameters: [String: String] = ["":""]
         
         parameters = [
-                //"Authorization" : "Bearer \(token)",
-               
                 "Content-Type": "application/json",
                 "Accept": "application/json"]
     

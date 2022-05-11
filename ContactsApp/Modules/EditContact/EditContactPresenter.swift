@@ -20,13 +20,9 @@ extension EditContactPresenter: EditContactPresenterRouterInterface {
 }
 
 extension EditContactPresenter: EditContactPresenterInteractorInterface {
-    func updateSuccess(){
-        view.displayUpdateSuccess()
+    func updateContact(message: String){
+        view.displayUpdateContact(message: message)
     
-    }
-    
-    func updateFail(){
-        view.displayUpdateFail()
     }
 }
 

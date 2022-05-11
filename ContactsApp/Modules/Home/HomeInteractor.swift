@@ -26,7 +26,6 @@ extension HomeInteractor: HomeInteractorPresenterInterface {
         service.getContactsList() {[weak self] result in
             switch result {
             case .success(let data):
-                print(" Success contacts listing >>>", data)
                 self!.presenter.contactsList(contactsList: data!)
             case .failure(let error):
                 print(" Error contacts listing >>>", error)

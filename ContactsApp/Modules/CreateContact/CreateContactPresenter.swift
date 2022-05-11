@@ -21,8 +21,8 @@ extension CreateContactPresenter: CreateContactPresenterRouterInterface {
 
 extension CreateContactPresenter: CreateContactPresenterInteractorInterface {
     
-    func doneCreate(){
-        view.doneCreate()
+    func doneCreate(message: String){
+        view.doneCreate(message: message)
     }
 }
 

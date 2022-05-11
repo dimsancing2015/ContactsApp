@@ -28,7 +28,14 @@ final class CreateContactView: UIViewController, ViewInterface {
 }
 
 extension CreateContactView: CreateContactViewPresenterInterface {
-    func doneCreate(){
-        self.dismiss(animated: true, completion: nil)
+    func doneCreate(message: String){
+        let alert = UIAlertController(title: "ContactsApp", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
     }
+    
+    
 }

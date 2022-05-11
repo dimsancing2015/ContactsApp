@@ -41,6 +41,7 @@ protocol HomeInteractorPresenterInterface: InteractorPresenterInterface {
 
 protocol HomeViewPresenterInterface: ViewPresenterInterface {
     func displayContactsList(contactsList: ContactsList)
+    func alert()
     
 }
 

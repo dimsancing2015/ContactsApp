@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C6A2E13282BFE0300216088 /* CreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E12282BFE0300216088 /* CreateResponse.swift */; };
 		2CA9583C282B6A2D001F109D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9583B282B6A2D001F109D /* AppDelegate.swift */; };
 		2CA9583E282B6A2D001F109D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9583D282B6A2D001F109D /* SceneDelegate.swift */; };
 		2CA95840282B6A2D001F109D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9583F282B6A2D001F109D /* ViewController.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C6A2E12282BFE0300216088 /* CreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResponse.swift; sourceTree = "<group>"; };
 		2CA95838282B6A2D001F109D /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA9583B282B6A2D001F109D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA9583D282B6A2D001F109D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,9 +196,7 @@
 			children = (
 				2CA958B4282B797A001F109D /* View */,
 				2CA95873282B6B2A001F109D /* Storage */,
-				2CA95872282B6B13001F109D /* Resources */,
 				2CA95871282B6B07001F109D /* Services */,
-				2CA95870282B6AF8001F109D /* Extensions */,
 				2CA9586F282B6AE7001F109D /* Utilities */,
 				2CA9586E282B6ADC001F109D /* Modules */,
 				2CA9583B282B6A2D001F109D /* AppDelegate.swift */,
@@ -247,13 +247,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2CA95870282B6AF8001F109D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		2CA95871282B6B07001F109D /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,13 +254,6 @@
 				2CA95874282B6B45001F109D /* Network */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		2CA95872282B6B13001F109D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		2CA95873282B6B2A001F109D /* Storage */ = {
@@ -296,6 +282,7 @@
 			children = (
 				2CA958B0282B7420001F109D /* ContactsList.swift */,
 				2CA958B8282B9F4A001F109D /* UpdateResponse.swift */,
+				2C6A2E12282BFE0300216088 /* CreateResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -650,6 +637,7 @@
 				2CA9587D282B6C62001F109D /* APIErrorType.swift in Sources */,
 				2CA958A9282B6E93001F109D /* EditContactModule.swift in Sources */,
 				2CA958B1282B7420001F109D /* ContactsList.swift in Sources */,
+				2C6A2E13282BFE0300216088 /* CreateResponse.swift in Sources */,
 				2CA958A1282B6E93001F109D /* ContactDetailView.swift in Sources */,
 				2CA958A2282B6E93001F109D /* ContactDetailPresenter.swift in Sources */,
 				2CA95877282B6B61001F109D /* NetworkManager.swift in Sources */,

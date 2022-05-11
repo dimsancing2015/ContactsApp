@@ -20,7 +20,7 @@ protocol CreateContactPresenterRouterInterface: PresenterRouterInterface {
 }
 
 protocol CreateContactPresenterInteractorInterface: PresenterInteractorInterface {
-    func doneCreate()
+    func doneCreate(message: String)
 }
 
 protocol CreateContactPresenterViewInterface: PresenterViewInterface {
@@ -37,7 +37,7 @@ protocol CreateContactInteractorPresenterInterface: InteractorPresenterInterface
 // MARK: - view
 
 protocol CreateContactViewPresenterInterface: ViewPresenterInterface {
-    func doneCreate()
+    func doneCreate(message: String)
 }
 
 
@@ -55,8 +55,7 @@ final class CreateContactModule: ModuleInterface {
         let contactsRepository = ContactsRepository()
         let view = storyboard.instantiateViewController(withIdentifier: "CreateContactView") as! CreateContactView
         let service = NetworkManager()
-       let interactor = Interactor(service: service, contactsRepository: contactsRepository)
-       // let interactor = Interactor(service: service)
+        let interactor = Interactor(service: service, contactsRepository: contactsRepository)
         let presenter = Presenter()
         let router = Router()
 
