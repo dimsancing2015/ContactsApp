@@ -20,7 +20,9 @@ final class CreateContactInteractor: InteractorInterface {
 }
 
 extension CreateContactInteractor: CreateContactInteractorPresenterInterface {
+    
     func createContact(firstName: String, lastName: String){
-        contactsRepository.create(firstName: firstName, lastName: lastName)
+        contactsRepository.create(id: 8, firstName: firstName, lastName: lastName)
+        presenter.doneCreate()
     }
 }

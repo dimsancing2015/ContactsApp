@@ -13,11 +13,11 @@ final class HomeInteractor: InteractorInterface {
     
     weak var presenter: HomePresenterInteractorInterface!
     var service: NetworkManager!
-    //var userRepository = UserRepository()
+    //var contactsRepository = ContactsRepository()
     
     init(service: NetworkManager) {
         self.service = service
-        //self.userRepository = userRepository
+        //self.contactsRepository = contactsRepository
     }
 }
 

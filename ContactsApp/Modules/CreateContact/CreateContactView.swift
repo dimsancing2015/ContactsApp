@@ -28,5 +28,7 @@ final class CreateContactView: UIViewController, ViewInterface {
 }
 
 extension CreateContactView: CreateContactViewPresenterInterface {
-
+    func doneCreate(){
+        self.dismiss(animated: true, completion: nil)
+    }
 }

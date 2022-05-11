@@ -54,12 +54,11 @@ final class EditContactModule: ModuleInterface {
 
     func build(contactsDetail: Datum) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let userRepository = UserRepository()
+        let contactsRepository = ContactsRepository()
         let view = storyboard.instantiateViewController(withIdentifier: "EditContactView") as! EditContactView
         view.contactsDetail = contactsDetail
         let service = NetworkManager()
-       // let interactor = Interactor(service: service, userRepository: userRepository)
-        let interactor = Interactor(service: service)
+        let interactor = Interactor(service: service, contactsRepository: contactsRepository)
         let presenter = Presenter()
         let router = Router()
 

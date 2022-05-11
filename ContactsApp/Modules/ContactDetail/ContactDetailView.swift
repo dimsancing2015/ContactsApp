@@ -11,8 +11,8 @@ import UIKit
 final class ContactDetailView: UIViewController, ViewInterface {
 
     @IBOutlet weak var imgProfile: UIImageView!
-    @IBOutlet weak var txtMobile: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
+//    @IBOutlet weak var txtMobile: UITextField!
+//    @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var lbName: UILabel!
     var presenter: ContactDetailPresenterViewInterface!
 
@@ -33,8 +33,8 @@ final class ContactDetailView: UIViewController, ViewInterface {
         print(" Contact Detail >>>", contactsDetail)
         
         lbName.text = String(contactsDetail!.firstName) + String(contactsDetail!.lastName)
-        txtEmail.text = contactsDetail?.email
-        txtMobile.text = String(contactsDetail!.id)
+//        txtEmail.text = contactsDetail?.email
+//        txtMobile.text = String(contactsDetail!.id)
         imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contactsDetail!.avatar )!))
         
     }

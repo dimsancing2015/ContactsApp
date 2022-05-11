@@ -16,6 +16,7 @@ extension Contacts {
         return NSFetchRequest<Contacts>(entityName: "Contacts")
     }
 
+    @NSManaged public var id: NSNumber?
     @NSManaged public var firstName: String?
     @NSManaged public var lastName: String?
 

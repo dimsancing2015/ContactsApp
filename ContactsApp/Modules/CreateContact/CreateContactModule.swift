@@ -20,7 +20,7 @@ protocol CreateContactPresenterRouterInterface: PresenterRouterInterface {
 }
 
 protocol CreateContactPresenterInteractorInterface: PresenterInteractorInterface {
-    
+    func doneCreate()
 }
 
 protocol CreateContactPresenterViewInterface: PresenterViewInterface {
@@ -31,12 +31,13 @@ protocol CreateContactPresenterViewInterface: PresenterViewInterface {
 
 protocol CreateContactInteractorPresenterInterface: InteractorPresenterInterface {
     func createContact(firstName: String, lastName: String)
+    
 }
 
 // MARK: - view
 
 protocol CreateContactViewPresenterInterface: ViewPresenterInterface {
-
+    func doneCreate()
 }
 
 

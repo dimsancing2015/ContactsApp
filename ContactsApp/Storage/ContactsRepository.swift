@@ -24,12 +24,13 @@ class ContactsRepository {
         return container
       }()
     
-    func create(firstName: String, lastName: String) {
+    func create(id:Int, firstName: String, lastName: String) {
         
         let managedContext = ContactsRepository.sharedManager.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Contacts", in: managedContext)!
 
         let user = NSManagedObject(entity: entity, insertInto: managedContext)
+        user.setValue(id, forKey: "id")
         user.setValue(firstName, forKey: "firstName")
         user.setValue(lastName, forKey: "lastName")
         
@@ -42,72 +43,44 @@ class ContactsRepository {
     }
     
     
-    func findUser(uid: String) -> Contacts? {
-        
-        print(" uid >>>", uid)
+    func findUser(id: Int) -> Contacts? {
+
+        print(" id >>>", id)
         let managedContext = ContactsRepository.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contacts")
-        fetchRequest.predicate = NSPredicate(format: "uid ==%@", uid)
+       
+        fetchRequest.predicate = NSPredicate(format: "id =%d", id)
         do {
             let response = try managedContext.fetch(fetchRequest)
             return response.count > 0 ? response[0] as? Contacts : nil
-            
+
         }catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return nil
         }
     }
     
-    func updateContacts(newToken : String, uid: String){
-       
+    func update(id: Int, firstName : String, lastName: String){
+        print(" updadte id >>>", id)
         let managedContext = ContactsRepository.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contacts")
-        fetchRequest.predicate = NSPredicate(format: "uid ==%@", uid)
+        fetchRequest.predicate = NSPredicate(format: "id =%d", id)
         do {
             let response = try managedContext.fetch(fetchRequest)
             if response.count != 0{
                 let userInfo = response[0]
-                userInfo.setValue(newToken, forKey: "token")
+                userInfo.setValue(firstName, forKey: "firstName")
+                userInfo.setValue(lastName, forKey: "lastName")
                 do {
                     try managedContext.save()
                 } catch let error as NSError {
-                    print("Could not save. \(error), \(error.userInfo)")
+                    print("Could not update. \(error), \(error.userInfo)")
                 }
             }
         }catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-    
-    
-    
-//
-//    func update(uid: String, userInfo: UserInfo) -> User? {
-//        let managedContext = UserRepository.sharedManager.persistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "User")
-//        fetchRequest.predicate = NSPredicate(format: "uid ==%@", uid)
-//
-//        do {
-//            let item = try managedContext.fetch(fetchRequest)
-//            var arrRemovedPeople = [User]()
-//            for i in item {
-//
-//              /*call delete method(aManagedObjectInstance)*/
-//              /*here i is managed object instance*/
-//              managedContext.delete(i)
-//
-//              /*finally save the contexts*/
-//              try managedContext.save()
-//
-//              /*update your array also*/
-//              arrRemovedPeople.append(i as! Person)
-//            }
-//            return arrRemovedPeople
-//        } catch let error as NSError {
-//            print("Could not fetch . \(error), \(error.userInfo)")
-//            return nil
-//        }
-//    }
 
 }
 

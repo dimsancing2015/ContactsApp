@@ -22,6 +22,7 @@ protocol HomePresenterRouterInterface: PresenterRouterInterface {
 
 protocol HomePresenterInteractorInterface: PresenterInteractorInterface {
     func contactsList(contactsList: ContactsList)
+
 }
 
 protocol HomePresenterViewInterface: PresenterViewInterface {
@@ -40,6 +41,7 @@ protocol HomeInteractorPresenterInterface: InteractorPresenterInterface {
 
 protocol HomeViewPresenterInterface: ViewPresenterInterface {
     func displayContactsList(contactsList: ContactsList)
+    
 }
 
 

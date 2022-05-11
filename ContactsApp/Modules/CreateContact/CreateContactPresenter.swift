@@ -20,7 +20,10 @@ extension CreateContactPresenter: CreateContactPresenterRouterInterface {
 }
 
 extension CreateContactPresenter: CreateContactPresenterInteractorInterface {
-
+    
+    func doneCreate(){
+        view.doneCreate()
+    }
 }
 
 extension CreateContactPresenter: CreateContactPresenterViewInterface {

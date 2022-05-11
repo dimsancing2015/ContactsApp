@@ -11,11 +11,11 @@ final class EditContactInteractor: InteractorInterface {
 
     weak var presenter: EditContactPresenterInteractorInterface!
     var service: NetworkManager!
-    //var userRepository = UserRepository()
+    var contactsRepository = ContactsRepository()
     
-    init(service: NetworkManager) {
+    init(service: NetworkManager, contactsRepository: ContactsRepository) {
         self.service = service
-        //self.userRepository = userRepository
+        self.contactsRepository = contactsRepository
     }
 }
 
@@ -25,6 +25,7 @@ extension EditContactInteractor: EditContactInteractorPresenterInterface {
             switch result {
             case .success(let data):
                 print("update successful >>>", data)
+                self!.updateLocalStorage(id: id, firstName: firstName, lastName: lastName)
                 self!.presenter.updateSuccess()
             case .failure(let error):
                 print("update fial >>>", error)
@@ -32,5 +33,14 @@ extension EditContactInteractor: EditContactInteractorPresenterInterface {
             }
             
         }
+    }
+    
+    private func updateLocalStorage(id: Int, firstName: String, lastName: String) {
+        let contacts = contactsRepository.findUser(id: id)
+        print(" contcats form core >>>", contacts?.id)
+        if contacts!.id != nil {
+            contactsRepository.update(id: id, firstName: firstName, lastName: lastName)
+        }
+        
     }
 }
