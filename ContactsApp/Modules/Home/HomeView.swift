@@ -26,13 +26,13 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
         tbView.delegate = self
         tbView.dataSource = self
         
+        if presenter != nil {
+            self.presenter.start()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if presenter != nil {
-            self.presenter.start()
-        }
     }
     
     @IBAction func btnAdd(_ sender: Any) {

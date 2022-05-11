@@ -33,6 +33,8 @@ final class EditContactView: UIViewController, ViewInterface {
         txtLastName.text = contactsDetail?.lastName
         txtMobile.text = String(contactsDetail!.id)
         imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contactsDetail!.avatar )!))
+        imgProfile.layer.masksToBounds = true
+        imgProfile.layer.cornerRadius = 50
     }
     
     @IBAction func btnDone(_ sender: Any) {

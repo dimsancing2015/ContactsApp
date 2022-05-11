@@ -32,6 +32,8 @@ final class ContactDetailView: UIViewController, ViewInterface {
         //        txtEmail.text = contactsDetail?.email
         //        txtMobile.text = String(contactsDetail!.id)
         imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contactsDetail!.avatar )!))
+        imgProfile.layer.masksToBounds = true
+        imgProfile.layer.cornerRadius = 50
         
     }
     

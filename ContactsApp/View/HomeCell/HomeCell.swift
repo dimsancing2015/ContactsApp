@@ -17,11 +17,15 @@ class HomeCell: UITableViewCell {
         didSet {
             lbName.text = contacts.firstName + contacts.lastName
             imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contacts.avatar )!))
+            imgProfile.layer.masksToBounds = true
+            imgProfile.layer.cornerRadius = 40
+            
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
     
     

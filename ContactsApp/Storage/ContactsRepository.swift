@@ -16,25 +16,24 @@ class ContactsRepository {
         let container = NSPersistentContainer(name: "ContactsApp")
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-          
-          if let error = error as NSError? {
-            fatalError("Unresolved error \(error), \(error.userInfo)")
-          }
+            
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
         })
         return container
-      }()
+    }()
     
     func create(id:Int, firstName: String, lastName: String) {
         
         let managedContext = ContactsRepository.sharedManager.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Contacts", in: managedContext)!
-
+        
         let user = NSManagedObject(entity: entity, insertInto: managedContext)
         user.setValue(id, forKey: "id")
         user.setValue(firstName, forKey: "firstName")
         user.setValue(lastName, forKey: "lastName")
         
-        print(" Create")
         do {
             try managedContext.save()
         } catch let error as NSError {
@@ -44,16 +43,15 @@ class ContactsRepository {
     
     
     func findUser(id: Int) -> Contacts? {
-
-        print(" id >>>", id)
+        
         let managedContext = ContactsRepository.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contacts")
-       
+        
         fetchRequest.predicate = NSPredicate(format: "id =%d", id)
         do {
             let response = try managedContext.fetch(fetchRequest)
             return response.count > 0 ? response[0] as? Contacts : nil
-
+            
         }catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return nil
@@ -61,7 +59,6 @@ class ContactsRepository {
     }
     
     func update(id: Int, firstName : String, lastName: String){
-        print(" updadte id >>>", id)
         let managedContext = ContactsRepository.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contacts")
         fetchRequest.predicate = NSPredicate(format: "id =%d", id)
@@ -81,6 +78,6 @@ class ContactsRepository {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-
+    
 }
 
