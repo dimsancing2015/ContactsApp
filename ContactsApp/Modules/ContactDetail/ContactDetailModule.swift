@@ -10,7 +10,7 @@ import UIKit
 // MARK: - router
 
 protocol ContactDetailRouterPresenterInterface: RouterPresenterInterface {
-    func goToEdit()
+    func goToEdit(contactsDetail: Datum)
 }
 
 // MARK: - presenter
@@ -25,7 +25,7 @@ protocol ContactDetailPresenterInteractorInterface: PresenterInteractorInterface
 
 protocol ContactDetailPresenterViewInterface: PresenterViewInterface {
     func start()
-    func goToEdit()
+    func goToEdit(contactsDetail: Datum)
 }
 
 // MARK: - interactor
@@ -54,7 +54,7 @@ final class ContactDetailModule: ModuleInterface {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         //let userRepository = UserRepository()
         let view = storyboard.instantiateViewController(withIdentifier: "ContactDetailView") as! ContactDetailView
-        
+        view.contactsDetail = contactDetail
         let service = NetworkManager()
        // let interactor = Interactor(service: service, userRepository: userRepository)
         let interactor = Interactor(service: service)

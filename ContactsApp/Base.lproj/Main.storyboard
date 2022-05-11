@@ -104,6 +104,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="&lt;"/>
+                                        <connections>
+                                            <action selector="btnBack:" destination="ePP-J0-6Nf" eventType="touchUpInside" id="hd9-7o-p1Z"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZJ-dG-Q9F">
                                         <rect key="frame" x="83" y="46" width="61" height="21"/>
@@ -167,6 +170,10 @@
                     </view>
                     <connections>
                         <outlet property="btnEdit" destination="U2D-JZ-d0g" id="pwq-VF-YCf"/>
+                        <outlet property="imgProfile" destination="cEI-Is-ozm" id="gI6-ZJ-SdE"/>
+                        <outlet property="lbName" destination="O8f-nf-SWV" id="qll-Y9-GAH"/>
+                        <outlet property="txtEmail" destination="3CE-PM-b16" id="ySB-ix-Sbl"/>
+                        <outlet property="txtMobile" destination="KFC-62-VYD" id="pZm-MF-PYm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6H-b1-M2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -190,12 +197,18 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                        <connections>
+                                            <action selector="btnCancel:" destination="oGn-ju-BrD" eventType="touchUpInside" id="AZ3-fQ-I7n"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zl4-v4-bsn">
                                         <rect key="frame" x="351" y="36" width="59" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                        <connections>
+                                            <action selector="btnDone:" destination="oGn-ju-BrD" eventType="touchUpInside" id="DCU-rk-cEB"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-hO-2pq">
                                         <rect key="frame" x="124" y="86" width="179" height="128"/>
@@ -243,23 +256,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hh0-QZ-Mlk">
-                                <rect key="frame" x="20" y="555" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iPt-us-BfN">
-                                <rect key="frame" x="147" y="555" width="247" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fjz-qc-iOT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="txtFirstName" destination="drg-Ff-lqs" id="I6L-sM-kh2"/>
+                        <outlet property="txtLastName" destination="Nyw-Gb-Lq9" id="vgs-dk-vda"/>
+                        <outlet property="txtMobile" destination="kE7-qz-Vdr" id="aya-8u-SbQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRN-U8-TdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

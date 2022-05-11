@@ -39,6 +39,7 @@
 		2CA958B1282B7420001F109D /* ContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA958B0282B7420001F109D /* ContactsList.swift */; };
 		2CA958B3282B75C0001F109D /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA958B2282B75C0001F109D /* BaseProtocol.swift */; };
 		2CA958B7282B7994001F109D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA958B6282B7994001F109D /* HomeCell.swift */; };
+		2CA958B9282B9F4A001F109D /* UpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA958B8282B9F4A001F109D /* UpdateResponse.swift */; };
 		847439F56BBDD29D292A2A05 /* Pods_ContactsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07F55A68568B827F5438EA9 /* Pods_ContactsAppTests.framework */; };
 		C755257ADA9162E25A3B53A5 /* Pods_ContactsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4097692FFA188E0A78F0FF39 /* Pods_ContactsApp.framework */; };
 		C8BDB88C0C0AE0EC00BD7DD6 /* Pods_ContactsApp_ContactsAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8091224A096E75DAE085A493 /* Pods_ContactsApp_ContactsAppUITests.framework */; };
@@ -98,6 +99,7 @@
 		2CA958B0282B7420001F109D /* ContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsList.swift; sourceTree = "<group>"; };
 		2CA958B2282B75C0001F109D /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
 		2CA958B6282B7994001F109D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		2CA958B8282B9F4A001F109D /* UpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateResponse.swift; sourceTree = "<group>"; };
 		4022547EE9853198AA05D8FC /* Pods-ContactsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsAppTests.release.xcconfig"; path = "Target Support Files/Pods-ContactsAppTests/Pods-ContactsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4097692FFA188E0A78F0FF39 /* Pods_ContactsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4672FA18016E6731B44B2DF4 /* Pods-ContactsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsApp.debug.xcconfig"; path = "Target Support Files/Pods-ContactsApp/Pods-ContactsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA958B0282B7420001F109D /* ContactsList.swift */,
+				2CA958B8282B9F4A001F109D /* UpdateResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				2CA95846282B6A2D001F109D /* ContactsApp.xcdatamodeld in Sources */,
 				2CA95840282B6A2D001F109D /* ViewController.swift in Sources */,
 				2CA95886282B6E04001F109D /* HomeView.swift in Sources */,
+				2CA958B9282B9F4A001F109D /* UpdateResponse.swift in Sources */,
 				2CA958AB282B6ECA001F109D /* ContactDetailRouter.swift in Sources */,
 				2CA958A6282B6E93001F109D /* EditContactInteractor.swift in Sources */,
 				2CA958B7282B7994001F109D /* HomeCell.swift in Sources */,

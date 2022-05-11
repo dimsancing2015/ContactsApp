@@ -14,9 +14,9 @@ final class ContactDetailRouter: RouterInterface {
 }
 
 extension ContactDetailRouter: ContactDetailRouterPresenterInterface {
-    func goToEdit() {
+    func goToEdit(contactsDetail: Datum) {
         print(" Go to Edit Contact >>>")
-        let view = EditContactModule().build()
+        let view = EditContactModule().build(contactsDetail: contactsDetail)
         view.modalPresentationStyle = .fullScreen
         viewController?.present(view, animated: true)
     }

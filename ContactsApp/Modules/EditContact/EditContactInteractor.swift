@@ -20,5 +20,17 @@ final class EditContactInteractor: InteractorInterface {
 }
 
 extension EditContactInteractor: EditContactInteractorPresenterInterface {
-
+    func updateContact(id: Int, firstName: String, lastName: String){
+        service.updateContact(id: id, firstName: firstName, lastName: lastName){[weak self] result in
+            switch result {
+            case .success(let data):
+                print("update successful >>>", data)
+                self!.presenter.updateSuccess()
+            case .failure(let error):
+                print("update fial >>>", error)
+                self!.presenter.updateFail()
+            }
+            
+        }
+    }
 }

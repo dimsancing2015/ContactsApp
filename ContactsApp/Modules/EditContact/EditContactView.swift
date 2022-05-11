@@ -10,17 +10,43 @@ import UIKit
 
 final class EditContactView: UIViewController, ViewInterface {
 
+    
+    @IBOutlet weak var txtFirstName: UITextField!
+    @IBOutlet weak var txtLastName: UITextField!
+    @IBOutlet weak var txtMobile: UITextField!
+    
     var presenter: EditContactPresenterViewInterface!
-
-
+    var contactsDetail: Datum? {
+        didSet{}
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.presenter.start()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        txtMobile.isEnabled = false
+        txtFirstName.text = contactsDetail?.firstName
+        txtLastName.text = contactsDetail?.lastName
+        txtMobile.text = String(contactsDetail!.id)
+    }
+    @IBAction func btnDone(_ sender: Any) {
+        self.presenter.saveEditContact(id: contactsDetail!.id, firstName: txtFirstName.text! , lastName: txtLastName.text!)
+    }
+    
+    @IBAction func btnCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension EditContactView: EditContactViewPresenterInterface {
-
+    func displayUpdateSuccess(){
+        // alert
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func displayUpdateFail(){
+        // alert
+    }
 }

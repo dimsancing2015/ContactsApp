@@ -10,17 +10,40 @@ import UIKit
 
 final class ContactDetailView: UIViewController, ViewInterface {
 
+    @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var txtMobile: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var lbName: UILabel!
     var presenter: ContactDetailPresenterViewInterface!
 
     @IBOutlet weak var btnEdit: UIButton!
     
+    var contactsDetail: Datum? {
+        didSet {}
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.presenter.start()
+        //self.presenter.start()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(" Contact Detail >>>", contactsDetail)
+        
+        lbName.text = String(contactsDetail!.firstName) + String(contactsDetail!.lastName)
+        txtEmail.text = contactsDetail?.email
+        txtMobile.text = String(contactsDetail!.id)
+        
+    }
+    
     @IBAction func btnEdit(_ sender: Any) {
-        presenter.goToEdit()
+        presenter.goToEdit(contactsDetail: contactsDetail!)
+    }
+    
+    @IBAction func btnBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 

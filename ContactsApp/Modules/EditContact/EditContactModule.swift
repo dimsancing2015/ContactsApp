@@ -20,23 +20,26 @@ protocol EditContactPresenterRouterInterface: PresenterRouterInterface {
 }
 
 protocol EditContactPresenterInteractorInterface: PresenterInteractorInterface {
-
+    func updateSuccess()
+    func updateFail()
 }
 
 protocol EditContactPresenterViewInterface: PresenterViewInterface {
-    func start()
+    func saveEditContact(id: Int, firstName: String, lastName: String)
 }
 
 // MARK: - interactor
 
 protocol EditContactInteractorPresenterInterface: InteractorPresenterInterface {
-
+    func updateContact(id: Int, firstName: String, lastName: String)
 }
 
 // MARK: - view
 
 protocol EditContactViewPresenterInterface: ViewPresenterInterface {
 
+    func displayUpdateSuccess()
+    func displayUpdateFail()
 }
 
 
@@ -49,11 +52,11 @@ final class EditContactModule: ModuleInterface {
     typealias Router = EditContactRouter
     typealias Interactor = EditContactInteractor
 
-    func build() -> UIViewController {
+    func build(contactsDetail: Datum) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         //let userRepository = UserRepository()
         let view = storyboard.instantiateViewController(withIdentifier: "EditContactView") as! EditContactView
-        
+        view.contactsDetail = contactsDetail
         let service = NetworkManager()
        // let interactor = Interactor(service: service, userRepository: userRepository)
         let interactor = Interactor(service: service)

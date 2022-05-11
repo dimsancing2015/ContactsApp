@@ -20,13 +20,20 @@ extension EditContactPresenter: EditContactPresenterRouterInterface {
 }
 
 extension EditContactPresenter: EditContactPresenterInteractorInterface {
-
+    func updateSuccess(){
+        view.displayUpdateSuccess()
+    
+    }
+    
+    func updateFail(){
+        view.displayUpdateFail()
+    }
 }
 
 extension EditContactPresenter: EditContactPresenterViewInterface {
 
-    func start() {
-
+    func saveEditContact(id: Int, firstName: String, lastName: String) {
+        interactor.updateContact(id: id, firstName: firstName, lastName: lastName)
     }
 
 }

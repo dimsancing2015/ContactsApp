@@ -14,6 +14,7 @@ import UIKit
 protocol FetchApiServices {
     // welcome
     func getContactsList(completion: @escaping (Result<ContactsList?, Error>) -> ())
+    func updateContact(id: Int, firstName: String, lastName: String, completion: @escaping(Result<UpdateResponse?, Error>) -> ())
     
 }
 
@@ -29,6 +30,7 @@ final class NetworkManager: FetchApiServices {
             case let .success(response):
                 do {
                     if response.statusCode >= 200 && response.statusCode <= 300 {
+                        
                         
                         let results = try JSONDecoder().decode(T.self, from: response.data)
                         completion(.success(results))
@@ -49,7 +51,9 @@ final class NetworkManager: FetchApiServices {
         request(networkService: .getContactList, completion: completion)
     }
     
-    
+    func updateContact(id: Int, firstName: String, lastName: String, completion: @escaping(Result<UpdateResponse?, Error>) -> ()){
+        request(networkService: .updateContact(id: id, firstName: firstName, lastName: lastName), completion: completion)
+    }
     
 }
 
