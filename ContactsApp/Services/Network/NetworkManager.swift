@@ -13,15 +13,15 @@ import UIKit
 
 protocol FetchApiServices {
     // welcome
-    func getVersion(completion: @escaping (Result<String?, Error>) -> ())
+    func getContactsList(completion: @escaping (Result<ContactsList?, Error>) -> ())
     
 }
 
 final class NetworkManager: FetchApiServices {
     
-    var userRespository = UserRepository()
+   // var userRespository = UserRepository()
     private let provider = MoyaProvider<NetworkService>(plugins: [NetworkLoggerPlugin()])
-    var newToken: JWTRefreshResponse?
+   
     
     func request<T: Codable>(networkService: NetworkService, completion: @escaping (Result<T?, Error>) -> ()) {
         provider.request(networkService) { result in
@@ -36,17 +36,17 @@ final class NetworkManager: FetchApiServices {
                    
             }
                 catch let error {
-                    Logger.shared.print(from: "\(Self.self)", message: error.localizedDescription)
+                    
                     completion(.failure(error))
                 }
             case let .failure(error):
-                Logger.shared.print(from: "\(Self.self)", message: error.localizedDescription)
+            
                 completion(.failure(error))
         }
     }
     }
-    func getVersion(completion: @escaping (Result<String?, Error>) -> ()){
-        request(networkService: .welcomVersion, completion: completion)
+    func getContactsList(completion: @escaping (Result<ContactsList?, Error>) -> ()){
+        request(networkService: .getContactList, completion: completion)
     }
     
     

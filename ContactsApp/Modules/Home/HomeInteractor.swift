@@ -6,12 +6,30 @@
 //
 
 import Foundation
+import RxSwift
+import Moya
 
 final class HomeInteractor: InteractorInterface {
-
+    
     weak var presenter: HomePresenterInteractorInterface!
+    var service: NetworkManager!
+    //var userRepository = UserRepository()
+    
+    init(service: NetworkManager) {
+        self.service = service
+        //self.userRepository = userRepository
+    }
 }
 
 extension HomeInteractor: HomeInteractorPresenterInterface {
-
+    func fetchContactsListing(){
+        service.getContactsList() {[weak self] result in
+            switch result {
+            case .success(let data):
+                print(" Success contacts listing >>>", data)
+            case .failure(let error):
+                print(" Error contacts listing >>>", error)
+            }
+        }
+    }
 }

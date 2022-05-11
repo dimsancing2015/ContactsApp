@@ -26,7 +26,7 @@ extension HomePresenter: HomePresenterInteractorInterface {
 extension HomePresenter: HomePresenterViewInterface {
 
     func start() {
-
+        interactor.fetchContactsListing()
     }
 
 }

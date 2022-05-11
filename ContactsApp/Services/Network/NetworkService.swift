@@ -6,23 +6,22 @@
 //
 
 import Moya
-import DeviceKit
 
 enum NetworkService{
     case userInfo(uid: String)
-    case welcomVersion
+    case getContactList
     
 }
 
 extension NetworkService : TargetType {
     public var baseURL: URL {
-        var envConfig = Configuration()
-        let baseURL: String = String(envConfig.baseUrl)
+        
+        let baseURL: String = "https://reqres.in/api/"
 
         switch self {
         case .userInfo(uid: _):
             return URL(string: baseURL)!
-        case .welcomVersion:
+        case .getContactList:
             return URL(string: baseURL)!
         
         }
@@ -32,8 +31,8 @@ extension NetworkService : TargetType {
         switch self {
         case .userInfo(let uid):
             return "user/\(uid)/entity"
-        case .welcomVersion:
-            return "version"
+        case .getContactList:
+            return "users"
         
         }
     }
@@ -42,7 +41,7 @@ extension NetworkService : TargetType {
         switch self {
         case .userInfo:
             return .get
-        case .welcomVersion:
+        case .getContactList:
             return .get
         }
     }
@@ -56,8 +55,8 @@ extension NetworkService : TargetType {
         switch self {
         case .userInfo(_):
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
-        case .welcomVersion:
-            return .requestParameters(parameters: ["version": "3.3.19", "os": "iOS"], encoding: URLEncoding.default)
+        case .getContactList:
+            return .requestParameters(parameters: ["page": "2"], encoding: URLEncoding.default)
         
         }
     }

@@ -30,7 +30,7 @@ protocol HomePresenterViewInterface: PresenterViewInterface {
 // MARK: - interactor
 
 protocol HomeInteractorPresenterInterface: InteractorPresenterInterface {
-
+    func fetchContactsListing()
 }
 
 // MARK: - view
@@ -50,8 +50,12 @@ final class HomeModule: ModuleInterface {
     typealias Interactor = HomeInteractor
 
     func build() -> UIViewController {
-        let view = View()
-        let interactor = Interactor()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //let userRepository = UserRepository()
+        let view = storyboard.instantiateViewController(withIdentifier: "HomeView") as! HomeView
+        let service = NetworkManager()
+       // let interactor = Interactor(service: service, userRepository: userRepository)
+        let interactor = Interactor(service: service)
         let presenter = Presenter()
         let router = Router()
 
