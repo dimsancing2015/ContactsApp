@@ -35,6 +35,7 @@ final class ContactDetailView: UIViewController, ViewInterface {
         lbName.text = String(contactsDetail!.firstName) + String(contactsDetail!.lastName)
         txtEmail.text = contactsDetail?.email
         txtMobile.text = String(contactsDetail!.id)
+        imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contactsDetail!.avatar )!))
         
     }
     

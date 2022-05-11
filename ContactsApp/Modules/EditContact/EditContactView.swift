@@ -14,6 +14,7 @@ final class EditContactView: UIViewController, ViewInterface {
     @IBOutlet weak var txtFirstName: UITextField!
     @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var txtMobile: UITextField!
+    @IBOutlet weak var imgProfile: UIImageView!
     
     var presenter: EditContactPresenterViewInterface!
     var contactsDetail: Datum? {
@@ -30,6 +31,7 @@ final class EditContactView: UIViewController, ViewInterface {
         txtFirstName.text = contactsDetail?.firstName
         txtLastName.text = contactsDetail?.lastName
         txtMobile.text = String(contactsDetail!.id)
+        imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contactsDetail!.avatar )!))
     }
     @IBAction func btnDone(_ sender: Any) {
         self.presenter.saveEditContact(id: contactsDetail!.id, firstName: txtFirstName.text! , lastName: txtLastName.text!)

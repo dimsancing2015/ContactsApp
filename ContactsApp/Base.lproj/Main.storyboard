@@ -264,6 +264,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="imgProfile" destination="GFC-hO-2pq" id="Xgd-gx-Wfw"/>
                         <outlet property="txtFirstName" destination="drg-Ff-lqs" id="I6L-sM-kh2"/>
                         <outlet property="txtLastName" destination="Nyw-Gb-Lq9" id="vgs-dk-vda"/>
                         <outlet property="txtMobile" destination="kE7-qz-Vdr" id="aya-8u-SbQ"/>

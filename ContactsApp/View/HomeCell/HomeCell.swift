@@ -16,6 +16,7 @@ class HomeCell: UITableViewCell {
     var contacts: Datum! {
         didSet {
             lbName.text = contacts.firstName + contacts.lastName
+            imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contacts.avatar )!))
         }
     }
     
