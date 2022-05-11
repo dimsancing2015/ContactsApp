@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C6A2E13282BFE0300216088 /* CreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E12282BFE0300216088 /* CreateResponse.swift */; };
+		2C6A2E22282C172000216088 /* contactsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E21282C172000216088 /* contactsRepositoryTests.swift */; };
+		2C6A2E24282C188000216088 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E23282C188000216088 /* HomeInteractorTests.swift */; };
 		2CA9583C282B6A2D001F109D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9583B282B6A2D001F109D /* AppDelegate.swift */; };
 		2CA9583E282B6A2D001F109D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9583D282B6A2D001F109D /* SceneDelegate.swift */; };
 		2CA95840282B6A2D001F109D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9583F282B6A2D001F109D /* ViewController.swift */; };
@@ -74,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		2C6A2E12282BFE0300216088 /* CreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResponse.swift; sourceTree = "<group>"; };
+		2C6A2E21282C172000216088 /* contactsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsRepositoryTests.swift; sourceTree = "<group>"; };
+		2C6A2E23282C188000216088 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		2CA95838282B6A2D001F109D /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA9583B282B6A2D001F109D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA9583D282B6A2D001F109D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				2CA95855282B6A30001F109D /* ContactsAppTests.swift */,
+				2C6A2E21282C172000216088 /* contactsRepositoryTests.swift */,
+				2C6A2E23282C188000216088 /* HomeInteractorTests.swift */,
 			);
 			path = ContactsAppTests;
 			sourceTree = "<group>";
@@ -666,6 +672,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6A2E24282C188000216088 /* HomeInteractorTests.swift in Sources */,
+				2C6A2E22282C172000216088 /* contactsRepositoryTests.swift in Sources */,
 				2CA95856282B6A30001F109D /* ContactsAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
