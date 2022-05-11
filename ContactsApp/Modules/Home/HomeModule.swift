@@ -10,7 +10,7 @@ import UIKit
 // MARK: - router
 
 protocol HomeRouterPresenterInterface: RouterPresenterInterface {
-
+    func  goToDetail(contactDetail: Datum)
 }
 
 // MARK: - presenter
@@ -20,11 +20,12 @@ protocol HomePresenterRouterInterface: PresenterRouterInterface {
 }
 
 protocol HomePresenterInteractorInterface: PresenterInteractorInterface {
-
+    func contactsList(contactsList: ContactsList)
 }
 
 protocol HomePresenterViewInterface: PresenterViewInterface {
     func start()
+    func contactsDetail(contactDetail: Datum)
 }
 
 // MARK: - interactor
@@ -36,7 +37,7 @@ protocol HomeInteractorPresenterInterface: InteractorPresenterInterface {
 // MARK: - view
 
 protocol HomeViewPresenterInterface: ViewPresenterInterface {
-
+    func displayContactsList(contactsList: ContactsList)
 }
 
 

@@ -14,6 +14,13 @@ final class ContactDetailRouter: RouterInterface {
 }
 
 extension ContactDetailRouter: ContactDetailRouterPresenterInterface {
+    func goToEdit() {
+        print(" Go to Edit Contact >>>")
+        let view = EditContactModule().build()
+        view.modalPresentationStyle = .fullScreen
+        viewController?.present(view, animated: true)
+    }
+    
     
 }
 

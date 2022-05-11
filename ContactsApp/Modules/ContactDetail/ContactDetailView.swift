@@ -12,12 +12,17 @@ final class ContactDetailView: UIViewController, ViewInterface {
 
     var presenter: ContactDetailPresenterViewInterface!
 
-
+    @IBOutlet weak var btnEdit: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.presenter.start()
     }
+    @IBAction func btnEdit(_ sender: Any) {
+        presenter.goToEdit()
+    }
+    
 
 }
 

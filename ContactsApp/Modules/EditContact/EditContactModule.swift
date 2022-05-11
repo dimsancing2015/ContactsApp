@@ -42,7 +42,7 @@ protocol EditContactViewPresenterInterface: ViewPresenterInterface {
 
 // MARK: - name builder
 
-final class EditContactname: ModuleInterface {
+final class EditContactModule: ModuleInterface {
 
     typealias View = EditContactView
     typealias Presenter = EditContactPresenter
@@ -50,8 +50,13 @@ final class EditContactname: ModuleInterface {
     typealias Interactor = EditContactInteractor
 
     func build() -> UIViewController {
-        let view = View()
-        let interactor = Interactor()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //let userRepository = UserRepository()
+        let view = storyboard.instantiateViewController(withIdentifier: "EditContactView") as! EditContactView
+        
+        let service = NetworkManager()
+       // let interactor = Interactor(service: service, userRepository: userRepository)
+        let interactor = Interactor(service: service)
         let presenter = Presenter()
         let router = Router()
 

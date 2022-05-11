@@ -10,7 +10,7 @@ import UIKit
 // MARK: - router
 
 protocol ContactDetailRouterPresenterInterface: RouterPresenterInterface {
-
+    func goToEdit()
 }
 
 // MARK: - presenter
@@ -25,6 +25,7 @@ protocol ContactDetailPresenterInteractorInterface: PresenterInteractorInterface
 
 protocol ContactDetailPresenterViewInterface: PresenterViewInterface {
     func start()
+    func goToEdit()
 }
 
 // MARK: - interactor
@@ -42,16 +43,21 @@ protocol ContactDetailViewPresenterInterface: ViewPresenterInterface {
 
 // MARK: - name builder
 
-final class ContactDetailname: ModuleInterface {
+final class ContactDetailModule: ModuleInterface {
 
     typealias View = ContactDetailView
     typealias Presenter = ContactDetailPresenter
     typealias Router = ContactDetailRouter
     typealias Interactor = ContactDetailInteractor
 
-    func build() -> UIViewController {
-        let view = View()
-        let interactor = Interactor()
+    func build(contactDetail: Datum) -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //let userRepository = UserRepository()
+        let view = storyboard.instantiateViewController(withIdentifier: "ContactDetailView") as! ContactDetailView
+        
+        let service = NetworkManager()
+       // let interactor = Interactor(service: service, userRepository: userRepository)
+        let interactor = Interactor(service: service)
         let presenter = Presenter()
         let router = Router()
 

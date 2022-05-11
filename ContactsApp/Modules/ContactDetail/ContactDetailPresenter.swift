@@ -28,5 +28,9 @@ extension ContactDetailPresenter: ContactDetailPresenterViewInterface {
     func start() {
 
     }
+    
+    func goToEdit() {
+        router.goToEdit()
+    }
 
 }

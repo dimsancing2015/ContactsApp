@@ -10,6 +10,13 @@ import Foundation
 final class EditContactInteractor: InteractorInterface {
 
     weak var presenter: EditContactPresenterInteractorInterface!
+    var service: NetworkManager!
+    //var userRepository = UserRepository()
+    
+    init(service: NetworkManager) {
+        self.service = service
+        //self.userRepository = userRepository
+    }
 }
 
 extension EditContactInteractor: EditContactInteractorPresenterInterface {

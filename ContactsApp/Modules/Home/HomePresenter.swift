@@ -20,13 +20,19 @@ extension HomePresenter: HomePresenterRouterInterface {
 }
 
 extension HomePresenter: HomePresenterInteractorInterface {
-
+    func contactsList(contactsList: ContactsList){
+        view.displayContactsList(contactsList: contactsList)
+    }
 }
 
 extension HomePresenter: HomePresenterViewInterface {
 
     func start() {
         interactor.fetchContactsListing()
+    }
+    
+    func contactsDetail(contactDetail: Datum){
+        router.goToDetail(contactDetail: contactDetail)
     }
 
 }
