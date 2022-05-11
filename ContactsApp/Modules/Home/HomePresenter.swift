@@ -34,5 +34,9 @@ extension HomePresenter: HomePresenterViewInterface {
     func contactsDetail(contactDetail: Datum){
         router.goToDetail(contactDetail: contactDetail)
     }
+    
+    func addContact(){
+        router.goToCreateContact()
+    }
 
 }

@@ -34,6 +34,11 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
             self.presenter.start()
         }
     }
+    
+    @IBAction func btnAdd(_ sender: Any) {
+        self.presenter.addContact()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

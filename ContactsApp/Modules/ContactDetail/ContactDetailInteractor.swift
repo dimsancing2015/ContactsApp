@@ -20,5 +20,7 @@ final class ContactDetailInteractor: InteractorInterface {
 }
 
 extension ContactDetailInteractor: ContactDetailInteractorPresenterInterface {
-
+    func createContact(){
+        //save in local DB
+    }
 }

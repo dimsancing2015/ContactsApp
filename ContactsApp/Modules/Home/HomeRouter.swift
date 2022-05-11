@@ -20,6 +20,13 @@ extension HomeRouter: HomeRouterPresenterInterface {
         view.modalPresentationStyle = .fullScreen
         viewController?.present(view, animated: true)
     }
+    
+    func goToCreateContact(){
+        print(" Go to Create >>>")
+        let view = CreateContactModule().build()
+        view.modalPresentationStyle = .fullScreen
+        viewController?.present(view, animated: true)
+    }
 }
 
 

@@ -11,6 +11,7 @@ import UIKit
 
 protocol HomeRouterPresenterInterface: RouterPresenterInterface {
     func  goToDetail(contactDetail: Datum)
+    func goToCreateContact()
 }
 
 // MARK: - presenter
@@ -26,6 +27,7 @@ protocol HomePresenterInteractorInterface: PresenterInteractorInterface {
 protocol HomePresenterViewInterface: PresenterViewInterface {
     func start()
     func contactsDetail(contactDetail: Datum)
+    func addContact()
 }
 
 // MARK: - interactor
