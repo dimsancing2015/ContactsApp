@@ -23,7 +23,7 @@ class HomeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        //print(" cell >>>>", contacts.lastName)
+        print(" HOne cell >>>>")
     }
     
     

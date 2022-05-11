@@ -22,7 +22,7 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tbView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+        tbView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         tbView.delegate = self
         tbView.dataSource = self
         
