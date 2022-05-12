@@ -13,12 +13,18 @@ final class CreateContactView: UIViewController, ViewInterface {
     
     @IBOutlet weak var txtFirstName: UITextField!
     @IBOutlet weak var txtLastName: UITextField!
+    @IBOutlet weak var nvBar: UINavigationBar!
     var presenter: CreateContactPresenterViewInterface!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureNvBar()
+    }
+    
+    func configureNvBar()
+    {
+        nvBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nvBar.shadowImage = UIImage()
     }
     
     @IBAction func btnCreate(_ sender: Any) {
