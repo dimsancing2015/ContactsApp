@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import RxSwift
 import Moya
-import RxCocoa
 import UIKit
 
 protocol FetchApiServices {

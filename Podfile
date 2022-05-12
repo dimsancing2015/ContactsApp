@@ -7,14 +7,12 @@ target 'ContactsApp' do
 
   # Pods for ContactsApp
 
-    pod 'Moya/RxSwift'
-    pod 'RxCocoa'
+    pod 'Moya', '~> 15.0'
 
   target 'ContactsAppTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'RxBlocking'
-    pod 'RxTest'
+    
   end
 
   target 'ContactsAppUITests' do
