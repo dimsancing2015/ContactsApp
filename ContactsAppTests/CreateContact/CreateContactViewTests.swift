@@ -28,6 +28,8 @@ class CreateContactViewTests: XCTestCase {
         
         //sut?.btnCreate(btn as Any)
         //sut?.viewDidLoad()
+        sut?.doneCreate(message: "Done Created")
+        sut?.alert(message: "Alert Test")
     }
 
     class MockCreateContactModule : CreateContactModule{

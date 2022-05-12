@@ -25,11 +25,13 @@ class EditContactViewTests: XCTestCase {
         sut = nil
     }
 
-    func testHomeViewUIFunctionalities(){
+    func testEditContactViewUIFunctionalities(){
         
         //sut?.btnDone(btn as Any)
         sut?.btnCancel(btn as Any)
         //sut?.viewDidLoad()
+        
+        sut?.displayUpdateContact(message: " Unit Test")
     }
 
     class MockEditContactModule : EditContactModule{

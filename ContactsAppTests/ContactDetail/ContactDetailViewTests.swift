@@ -30,6 +30,7 @@ class ContactDetailViewTests: XCTestCase {
         sut?.btnBack(btn as Any)
         sut?.btnEdit(btn as Any)
         sut?.viewDidLoad()
+        
     }
 
     class MockContactDetailModule : ContactDetailModule{
