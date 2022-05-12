@@ -1,5 +1,5 @@
 //
-//  CreateContactViewTests.swift
+//  CreateViewTests.swift
 //  ContactsAppTests
 //
 //  Created by Dim San Cing on 5/12/22.
@@ -8,15 +8,15 @@
 import XCTest
 
 @testable import ContactsApp
-class CreateContactViewTests: XCTestCase {
+class CreateViewTests: XCTestCase {
     
-    var sut : CreateContactView?
-    var mockCreateContactModule : MockCreateContactModule?
+    var sut : CreateView?
+    var mockCreateModule : MockCreateModule?
     var btn : UIButton?
 
     override func setUpWithError() throws {
-        mockCreateContactModule = MockCreateContactModule()
-        sut = mockCreateContactModule?.build() as? CreateContactView
+        mockCreateModule = MockCreateModule()
+        sut = mockCreateModule?.build() as? CreateView
         btn = UIButton()
     }
 
@@ -25,14 +25,13 @@ class CreateContactViewTests: XCTestCase {
     }
 
     func testHomeViewUIFunctionalities(){
-        
         //sut?.btnCreate(btn as Any)
         //sut?.viewDidLoad()
         sut?.doneCreate(message: "Done Created")
         sut?.alert(message: "Alert Test")
     }
 
-    class MockCreateContactModule : CreateContactModule{
+    class MockCreateModule : CreateModule{
         
     }
 

@@ -14,7 +14,6 @@ class HomeInteractorTests: XCTestCase {
     var networkManager : NetworkManager!
 
     override func setUpWithError() throws {
-        //contactsRepository = ContactsRepository()
         networkManager = NetworkManager()
         sut = HomeInteractor(service: networkManager)
         sut?.presenter = HomePresenter()
@@ -24,8 +23,8 @@ class HomeInteractorTests: XCTestCase {
         sut = nil
     }
 
-    func testGetRouteForContact(){
-        sut?.fetchContactsListing()
+    func test_interacter(){
+        sut?.fetchListing()
     }
 
 }

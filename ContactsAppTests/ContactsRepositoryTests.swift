@@ -15,7 +15,6 @@ class ContactsRepositoryTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
         contactsRepository = ContactsRepository.sharedManager
     }
     
@@ -25,13 +24,11 @@ class ContactsRepositoryTests: XCTestCase {
     
     func test_init_Repository(){
         let instance = ContactsRepository.sharedManager
-        
         XCTAssertNotNil( instance )
     }
     
     func test_coreDataStackInitialization() {
         let coreDataStack = ContactsRepository.sharedManager.persistentContainer
-        
         XCTAssertNotNil( coreDataStack )
     }
     
@@ -65,7 +62,6 @@ class ContactsRepositoryTests: XCTestCase {
     
     
     func test_update_contact(){
-        
         let items = contactsRepository.find(id: 123)
         let _: () = contactsRepository.update(id: 123, firstName: "Peter", lastName: "Lim")
         let itemsFetched = contactsRepository.find(id: 123)

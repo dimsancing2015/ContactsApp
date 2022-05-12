@@ -6,14 +6,14 @@
 //
 
 import Foundation
-import Moya
 import UIKit
+import Moya
 
 protocol FetchApiServices {
     
-    func getContactsList(completion: @escaping (Result<ContactsList?, Error>) -> ())
-    func updateContact(id: Int, firstName: String, lastName: String, completion: @escaping(Result<UpdateResponse?, Error>) -> ())
-    func createContact(firstName: String, lastName: String, completion: @escaping(Result<CreateResponse?, Error>) -> ())
+    func getList(completion: @escaping (Result<ContactsList?, Error>) -> ())
+    func update(id: Int, firstName: String, lastName: String, completion: @escaping(Result<UpdateResponse?, Error>) -> ())
+    func create(firstName: String, lastName: String, completion: @escaping(Result<CreateResponse?, Error>) -> ())
     
 }
 
@@ -30,7 +30,6 @@ final class NetworkManager: FetchApiServices {
                 do {
                     if response.statusCode >= 200 && response.statusCode <= 300 {
                         
-                        
                         let results = try JSONDecoder().decode(T.self, from: response.data)
                         completion(.success(results))
                     }
@@ -46,16 +45,16 @@ final class NetworkManager: FetchApiServices {
             }
         }
     }
-    func getContactsList(completion: @escaping (Result<ContactsList?, Error>) -> ()){
-        request(networkService: .getContactList, completion: completion)
+    func getList(completion: @escaping (Result<ContactsList?, Error>) -> ()){
+        request(networkService: .getList, completion: completion)
     }
     
-    func updateContact(id: Int, firstName: String, lastName: String, completion: @escaping(Result<UpdateResponse?, Error>) -> ()){
-        request(networkService: .updateContact(id: id, firstName: firstName, lastName: lastName), completion: completion)
+    func update(id: Int, firstName: String, lastName: String, completion: @escaping(Result<UpdateResponse?, Error>) -> ()){
+        request(networkService: .update(id: id, firstName: firstName, lastName: lastName), completion: completion)
     }
     
-    func createContact(firstName: String, lastName: String, completion: @escaping(Result<CreateResponse?, Error>) -> ()){
-        request(networkService: .createContact(firstName: firstName, lastName: lastName), completion: completion)
+    func create(firstName: String, lastName: String, completion: @escaping(Result<CreateResponse?, Error>) -> ()){
+        request(networkService: .create(firstName: firstName, lastName: lastName), completion: completion)
     }
     
 }

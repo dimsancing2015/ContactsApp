@@ -10,8 +10,8 @@ import UIKit
 // MARK: - router
 
 protocol HomeRouterPresenterInterface: RouterPresenterInterface {
-    func  goToDetail(contactDetail: Datum)
-    func goToCreateContact()
+    func  goToDetail(contactDetail: Contact)
+    func goToCreate()
 }
 
 // MARK: - presenter
@@ -22,25 +22,25 @@ protocol HomePresenterRouterInterface: PresenterRouterInterface {
 
 protocol HomePresenterInteractorInterface: PresenterInteractorInterface {
     func contactsList(contactsList: ContactsList)
-    func failFetchContactsList(message: String)
+    func failFetchList(message: String)
 }
 
 protocol HomePresenterViewInterface: PresenterViewInterface {
     func start()
-    func contactsDetail(contactDetail: Datum)
-    func addContact()
+    func contactsDetail(contactDetail: Contact)
+    func add()
 }
 
 // MARK: - interactor
 
 protocol HomeInteractorPresenterInterface: InteractorPresenterInterface {
-    func fetchContactsListing()
+    func fetchListing()
 }
 
 // MARK: - view
 
 protocol HomeViewPresenterInterface: ViewPresenterInterface {
-    func displayContactsList(contactsList: ContactsList)
+    func displayList(contactsList: ContactsList)
     func alert(message: String)
 }
 
@@ -56,10 +56,8 @@ class HomeModule: ModuleInterface {
 
     func build() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let contactsRepository = ContactsRepository()
         let view = storyboard.instantiateViewController(withIdentifier: "HomeView") as! HomeView
         let service = NetworkManager()
-       // let interactor = Interactor(service: service, contactsRepository: contactsRepository)
         let interactor = Interactor(service: service)
         let presenter = Presenter()
         let router = Router()

@@ -43,7 +43,7 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
     }
     
     @IBAction func btnAdd(_ sender: Any) {
-        self.presenter.addContact()
+        self.presenter.add()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,9 +71,7 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
 }
 
 extension HomeView: HomeViewPresenterInterface{
-    
-    
-    func displayContactsList(contactsList: ContactsList){
+    func displayList(contactsList: ContactsList){
         contactsListing = contactsList
     }
     

@@ -10,7 +10,7 @@ import Foundation
 // MARK: - ContactsList
 struct ContactsList: Codable {
     let page, perPage, total, totalPages: Int
-    let data: [Datum]
+    let data: [Contact]
     let support: Support
 
     enum CodingKeys: String, CodingKey {
@@ -22,8 +22,8 @@ struct ContactsList: Codable {
     }
 }
 
-// MARK: - Datum
-struct Datum: Codable {
+// MARK: - Contact
+struct Contact: Codable {
     let id: Int
     let email, firstName, lastName: String
     let avatar: String

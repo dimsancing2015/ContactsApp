@@ -13,7 +13,7 @@ class HomeCell: UITableViewCell {
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lbName: UILabel!
     
-    var contacts: Datum! {
+    var contacts: Contact! {
         didSet {
             lbName.text = contacts.firstName + contacts.lastName
             imgProfile.image = UIImage(data: try! Data(contentsOf: URL(string: contacts.avatar )!))

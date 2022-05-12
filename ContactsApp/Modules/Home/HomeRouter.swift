@@ -14,14 +14,14 @@ class HomeRouter: RouterInterface {
 }
 
 extension HomeRouter: HomeRouterPresenterInterface {
-    func goToDetail(contactDetail: Datum) {
-        let view = ContactDetailModule().build(contactDetail: contactDetail)
+    func goToDetail(contactDetail: Contact) {
+        let view = DetailModule().build(contactDetail: contactDetail)
         view.modalPresentationStyle = .fullScreen
         viewController?.present(view, animated: true)
     }
     
-    func goToCreateContact(){
-        let view = CreateContactModule().build()
+    func goToCreate(){
+        let view = CreateModule().build()
         view.modalPresentationStyle = .fullScreen
         viewController?.present(view, animated: true)
     }

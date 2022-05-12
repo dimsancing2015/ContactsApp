@@ -1,15 +1,15 @@
 //
-//  CreateContactInteractor.swift
-//  CreateContact
+//  CreateInteractor.swift
+//  Create
 //
 //  Created by Dim San Cing on 5/11/22.
 //
 
 import Foundation
 
-final class CreateContactInteractor: InteractorInterface {
+final class CreateInteractor: InteractorInterface {
     
-    var presenter: CreateContactPresenterInteractorInterface!
+    var presenter: CreatePresenterInteractorInterface!
     var service: NetworkManager!
     var contactsRepository = ContactsRepository()
     
@@ -19,10 +19,10 @@ final class CreateContactInteractor: InteractorInterface {
     }
 }
 
-extension CreateContactInteractor: CreateContactInteractorPresenterInterface {
+extension CreateInteractor: CreateInteractorPresenterInterface {
     
-    func createContact(firstName: String, lastName: String){
-        service.createContact(firstName: firstName, lastName: lastName){[weak self] result in
+    func create(firstName: String, lastName: String){
+        service.create(firstName: firstName, lastName: lastName){[weak self] result in
             switch result {
             case .success(let data):
                 self!.contactsRepository.create(id: Int(data!.id)!, firstName: firstName, lastName: lastName)
@@ -32,7 +32,5 @@ extension CreateContactInteractor: CreateContactInteractorPresenterInterface {
                 self!.presenter.doneCreate(message: "Failed New Contact")
             }
         }
-        
-        
     }
 }

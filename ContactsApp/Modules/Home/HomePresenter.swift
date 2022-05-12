@@ -21,10 +21,10 @@ extension HomePresenter: HomePresenterRouterInterface {
 
 extension HomePresenter: HomePresenterInteractorInterface {
     func contactsList(contactsList: ContactsList){
-        view.displayContactsList(contactsList: contactsList)
+        view.displayList(contactsList: contactsList)
     }
     
-    func failFetchContactsList(message: String) {
+    func failFetchList(message: String) {
         view.alert(message: message)
     }
 }
@@ -33,19 +33,19 @@ extension HomePresenter: HomePresenterViewInterface {
 
     func start() {
         if InternetConnectionManager.isConnectedToNetwork(){
-            interactor.fetchContactsListing()
+            interactor.fetchListing()
         }else{
             view.alert(message: "Check Your Internet Connection!")
         }
         
     }
     
-    func contactsDetail(contactDetail: Datum){
+    func contactsDetail(contactDetail: Contact){
         router.goToDetail(contactDetail: contactDetail)
     }
     
-    func addContact(){
-        router.goToCreateContact()
+    func add(){
+        router.goToCreate()
     }
 
 }

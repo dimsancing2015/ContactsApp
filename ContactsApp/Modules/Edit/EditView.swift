@@ -1,6 +1,6 @@
 //
-//  EditContactView.swift
-//  EditContact
+//  EditView.swift
+//  Edit
 //
 //  Created by Dim San Cing on 5/11/22.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class EditContactView: UIViewController, ViewInterface {
+final class EditView: UIViewController, ViewInterface {
     
     
     @IBOutlet weak var txtFirstName: UITextField!
@@ -17,8 +17,8 @@ final class EditContactView: UIViewController, ViewInterface {
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var nvBar: UINavigationBar!
     
-    var presenter: EditContactPresenterViewInterface!
-    var contactsDetail: Datum? {
+    var presenter: EditPresenterViewInterface!
+    var contactsDetail: Contact? {
         didSet{}
     }
     
@@ -27,8 +27,7 @@ final class EditContactView: UIViewController, ViewInterface {
         configureNvBar()
     }
     
-    func configureNvBar()
-    {
+    func configureNvBar() {
         nvBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         nvBar.shadowImage = UIImage()
     }
@@ -45,7 +44,7 @@ final class EditContactView: UIViewController, ViewInterface {
     }
     
     @IBAction func btnDone(_ sender: Any) {
-        self.presenter.saveEditContact(id: contactsDetail!.id, firstName: txtFirstName.text! , lastName: txtLastName.text!)
+        self.presenter.saveEdit(id: contactsDetail!.id, firstName: txtFirstName.text! , lastName: txtLastName.text!)
     }
     
     @IBAction func btnCancel(_ sender: Any) {
@@ -53,8 +52,8 @@ final class EditContactView: UIViewController, ViewInterface {
     }
 }
 
-extension EditContactView: EditContactViewPresenterInterface {
-    func displayUpdateContact(message: String){
+extension EditView: EditViewPresenterInterface {
+    func displayUpdate(message: String){
         let alert = UIAlertController(title: "ContactsApp", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
             self.dismiss(animated: true, completion: nil)
