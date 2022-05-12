@@ -15,6 +15,7 @@ final class EditContactView: UIViewController, ViewInterface {
     @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var txtMobile: UITextField!
     @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var nvBar: UINavigationBar!
     
     var presenter: EditContactPresenterViewInterface!
     var contactsDetail: Datum? {
@@ -23,7 +24,13 @@ final class EditContactView: UIViewController, ViewInterface {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureNvBar()
+    }
+    
+    func configureNvBar()
+    {
+        nvBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nvBar.shadowImage = UIImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -17,6 +17,7 @@ class HomeInteractorTests: XCTestCase {
         //contactsRepository = ContactsRepository()
         networkManager = NetworkManager()
         sut = HomeInteractor(service: networkManager)
+        sut?.presenter = HomePresenter()
     }
 
     override func tearDownWithError() throws {

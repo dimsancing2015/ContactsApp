@@ -14,7 +14,8 @@ final class ContactDetailView: UIViewController, ViewInterface {
     //    @IBOutlet weak var txtMobile: UITextField!
     //    @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var lbName: UILabel!
-    @IBOutlet weak var btnEdit: UIButton!
+   // @IBOutlet weak var btnEdit: UIButton!
+    @IBOutlet weak var nvBar: UINavigationBar!
     
     var presenter: ContactDetailPresenterViewInterface!
     var contactsDetail: Datum? {
@@ -23,6 +24,7 @@ final class ContactDetailView: UIViewController, ViewInterface {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNvBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +37,12 @@ final class ContactDetailView: UIViewController, ViewInterface {
         imgProfile.layer.masksToBounds = true
         imgProfile.layer.cornerRadius = 50
         
+    }
+    
+    func configureNvBar()
+    {
+        nvBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nvBar.shadowImage = UIImage()
     }
     
     @IBAction func btnEdit(_ sender: Any) {

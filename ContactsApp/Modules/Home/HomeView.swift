@@ -12,6 +12,7 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
     
     var presenter: HomePresenterViewInterface!
     @IBOutlet weak var tbView: UITableView!
+    @IBOutlet weak var nvBar: UINavigationBar!
     
     var contactsListing : ContactsList? {
         didSet {
@@ -25,10 +26,16 @@ final class HomeView: UIViewController, ViewInterface, UITableViewDelegate, UITa
         tbView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         tbView.delegate = self
         tbView.dataSource = self
-        
+        configureNvBar()
         if presenter != nil {
             self.presenter.start()
         }
+    }
+    
+    func configureNvBar()
+    {
+        nvBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nvBar.shadowImage = UIImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {

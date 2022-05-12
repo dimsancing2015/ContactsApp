@@ -9,7 +9,7 @@ import Foundation
 
 final class EditContactInteractor: InteractorInterface {
     
-    weak var presenter: EditContactPresenterInteractorInterface!
+    var presenter: EditContactPresenterInteractorInterface!
     var service: NetworkManager!
     var contactsRepository = ContactsRepository()
     

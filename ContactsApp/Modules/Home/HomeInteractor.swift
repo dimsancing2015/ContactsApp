@@ -11,7 +11,7 @@ import Moya
 
 final class HomeInteractor: InteractorInterface {
     
-    weak var presenter: HomePresenterInteractorInterface!
+    var presenter: HomePresenterInteractorInterface!
     var service: NetworkManager!
     //var contactsRepository = ContactsRepository()
     
@@ -26,7 +26,7 @@ extension HomeInteractor: HomeInteractorPresenterInterface {
         service.getContactsList() {[weak self] result in
             switch result {
             case .success(let data):
-                self!.presenter.contactsList(contactsList: data!)
+                self?.presenter.contactsList(contactsList: data!)
             case .failure(let error):
                 print(" Error contacts listing >>>", error)
                 self?.presenter.failFetchContactsList(message: "Failed Contacts Listing")
