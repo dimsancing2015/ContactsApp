@@ -31,7 +31,7 @@ class EditContractPresenterTests: XCTestCase {
     }
     
     func testWhenPresenterRouteByRouters(){
-        //let datum = Datum(id: 1234, email: "lia.dimsancing@gmail.com", firstName: "DimSan", lastName: "Cing", avatar: "https://reqres.in/img/faces/7-image.jpg")
+        
         sut?.saveEditContact(id: 1245, firstName: "Dim San", lastName: "Cing")
         
     }

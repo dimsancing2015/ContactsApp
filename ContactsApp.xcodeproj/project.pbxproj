@@ -16,6 +16,10 @@
 		2C687B2E282D00CF00044CA6 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B2D282D00CF00044CA6 /* HomePresenterTests.swift */; };
 		2C687B30282D02CC00044CA6 /* CreateContactPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B2F282D02CC00044CA6 /* CreateContactPresenterTests.swift */; };
 		2C687B32282D08B800044CA6 /* EditContractPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B31282D08B800044CA6 /* EditContractPresenterTests.swift */; };
+		2C687B34282D121B00044CA6 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B33282D121B00044CA6 /* HomeViewTests.swift */; };
+		2C687B36282D140C00044CA6 /* EditContactViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B35282D140C00044CA6 /* EditContactViewTests.swift */; };
+		2C687B38282D182400044CA6 /* ContactDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B37282D182400044CA6 /* ContactDetailViewTests.swift */; };
+		2C687B3A282D192B00044CA6 /* CreateContactViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B39282D192B00044CA6 /* CreateContactViewTests.swift */; };
 		2C6A2E13282BFE0300216088 /* CreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E12282BFE0300216088 /* CreateResponse.swift */; };
 		2C6A2E22282C172000216088 /* ContactsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E21282C172000216088 /* ContactsRepositoryTests.swift */; };
 		2C6A2E24282C188000216088 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E23282C188000216088 /* HomeInteractorTests.swift */; };
@@ -32,7 +36,6 @@
 		2CA95877282B6B61001F109D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA95876282B6B61001F109D /* NetworkManager.swift */; };
 		2CA95879282B6BB0001F109D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA95878282B6BB0001F109D /* NetworkService.swift */; };
 		2CA9587B282B6C46001F109D /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9587A282B6C46001F109D /* InternetConnectionManager.swift */; };
-		2CA9587D282B6C62001F109D /* APIErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9587C282B6C62001F109D /* APIErrorType.swift */; };
 		2CA95885282B6E04001F109D /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA95880282B6E04001F109D /* HomeInteractor.swift */; };
 		2CA95886282B6E04001F109D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA95881282B6E04001F109D /* HomeView.swift */; };
 		2CA95887282B6E04001F109D /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA95882282B6E04001F109D /* HomePresenter.swift */; };
@@ -93,6 +96,10 @@
 		2C687B2D282D00CF00044CA6 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		2C687B2F282D02CC00044CA6 /* CreateContactPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactPresenterTests.swift; sourceTree = "<group>"; };
 		2C687B31282D08B800044CA6 /* EditContractPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractPresenterTests.swift; sourceTree = "<group>"; };
+		2C687B33282D121B00044CA6 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
+		2C687B35282D140C00044CA6 /* EditContactViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewTests.swift; sourceTree = "<group>"; };
+		2C687B37282D182400044CA6 /* ContactDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewTests.swift; sourceTree = "<group>"; };
+		2C687B39282D192B00044CA6 /* CreateContactViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactViewTests.swift; sourceTree = "<group>"; };
 		2C6A2E12282BFE0300216088 /* CreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResponse.swift; sourceTree = "<group>"; };
 		2C6A2E21282C172000216088 /* ContactsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRepositoryTests.swift; sourceTree = "<group>"; };
 		2C6A2E23282C188000216088 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
@@ -113,7 +120,6 @@
 		2CA95876282B6B61001F109D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2CA95878282B6BB0001F109D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2CA9587A282B6C46001F109D /* InternetConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
-		2CA9587C282B6C62001F109D /* APIErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorType.swift; sourceTree = "<group>"; };
 		2CA95880282B6E04001F109D /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		2CA95881282B6E04001F109D /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2CA95882282B6E04001F109D /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 				2C6A2E23282C188000216088 /* HomeInteractorTests.swift */,
 				2C687B22282CF9D600044CA6 /* HomeRouterTests.swift */,
 				2C687B2D282D00CF00044CA6 /* HomePresenterTests.swift */,
+				2C687B33282D121B00044CA6 /* HomeViewTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 				2C687B1F282CEB9100044CA6 /* EditContactInteractorTests.swift */,
 				2C687B25282CFB3900044CA6 /* EditContactRouterTests.swift */,
 				2C687B31282D08B800044CA6 /* EditContractPresenterTests.swift */,
+				2C687B35282D140C00044CA6 /* EditContactViewTests.swift */,
 			);
 			path = EditContact;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 			children = (
 				2C687B28282CFC7700044CA6 /* ContactDetailRouterTests.swift */,
 				2C687B2B282CFF1C00044CA6 /* ContactDetailPresenterTests.swift */,
+				2C687B37282D182400044CA6 /* ContactDetailViewTests.swift */,
 			);
 			path = ContactDetail;
 			sourceTree = "<group>";
@@ -225,6 +234,7 @@
 			children = (
 				2C687B1D282CE9F600044CA6 /* CreateContactInteractorTests.swift */,
 				2C687B2F282D02CC00044CA6 /* CreateContactPresenterTests.swift */,
+				2C687B39282D192B00044CA6 /* CreateContactViewTests.swift */,
 			);
 			path = CreateContact;
 			sourceTree = "<group>";
@@ -337,7 +347,6 @@
 				2CA95876282B6B61001F109D /* NetworkManager.swift */,
 				2CA95878282B6BB0001F109D /* NetworkService.swift */,
 				2CA9587A282B6C46001F109D /* InternetConnectionManager.swift */,
-				2CA9587C282B6C62001F109D /* APIErrorType.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -408,11 +417,11 @@
 		2CA958BA282BAA82001F109D /* CreateContact */ = {
 			isa = PBXGroup;
 			children = (
-				2CA958BB282BAA82001F109D /* CreateContactModule.swift */,
 				2CA958BD282BAA82001F109D /* CreateContactView.swift */,
 				2CA958BE282BAA82001F109D /* CreateContactPresenter.swift */,
 				2CA958BF282BAA82001F109D /* CreateContactInteractor.swift */,
 				2CA958C5282BAACC001F109D /* CreateContactRouter.swift */,
+				2CA958BB282BAA82001F109D /* CreateContactModule.swift */,
 			);
 			path = CreateContact;
 			sourceTree = "<group>";
@@ -681,7 +690,6 @@
 				2CA958CC282BAE93001F109D /* ContactsRepository.swift in Sources */,
 				2CA958C4282BAA82001F109D /* CreateContactInteractor.swift in Sources */,
 				2CA958B7282B7994001F109D /* HomeCell.swift in Sources */,
-				2CA9587D282B6C62001F109D /* APIErrorType.swift in Sources */,
 				2CA958A9282B6E93001F109D /* EditContactModule.swift in Sources */,
 				2CA958B1282B7420001F109D /* ContactsList.swift in Sources */,
 				2C6A2E13282BFE0300216088 /* CreateResponse.swift in Sources */,
@@ -718,9 +726,13 @@
 				2C687B23282CF9D600044CA6 /* HomeRouterTests.swift in Sources */,
 				2C687B2E282D00CF00044CA6 /* HomePresenterTests.swift in Sources */,
 				2C687B32282D08B800044CA6 /* EditContractPresenterTests.swift in Sources */,
+				2C687B3A282D192B00044CA6 /* CreateContactViewTests.swift in Sources */,
+				2C687B34282D121B00044CA6 /* HomeViewTests.swift in Sources */,
 				2C687B30282D02CC00044CA6 /* CreateContactPresenterTests.swift in Sources */,
 				2C687B20282CEB9100044CA6 /* EditContactInteractorTests.swift in Sources */,
 				2C687B29282CFC7700044CA6 /* ContactDetailRouterTests.swift in Sources */,
+				2C687B38282D182400044CA6 /* ContactDetailViewTests.swift in Sources */,
+				2C687B36282D140C00044CA6 /* EditContactViewTests.swift in Sources */,
 				2C6A2E22282C172000216088 /* ContactsRepositoryTests.swift in Sources */,
 				2C687B2C282CFF1C00044CA6 /* ContactDetailPresenterTests.swift in Sources */,
 				2CA95856282B6A30001F109D /* ContactsAppTests.swift in Sources */,

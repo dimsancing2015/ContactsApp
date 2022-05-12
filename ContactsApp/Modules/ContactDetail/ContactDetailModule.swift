@@ -42,7 +42,7 @@ protocol ContactDetailViewPresenterInterface: ViewPresenterInterface {
 
 // MARK: - name builder
 
-final class ContactDetailModule: ModuleInterface {
+class ContactDetailModule: ModuleInterface {
     
     typealias View = ContactDetailView
     typealias Presenter = ContactDetailPresenter

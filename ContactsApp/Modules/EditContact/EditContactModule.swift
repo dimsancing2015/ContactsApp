@@ -43,7 +43,7 @@ protocol EditContactViewPresenterInterface: ViewPresenterInterface {
 
 // MARK: - name builder
 
-final class EditContactModule: ModuleInterface {
+class EditContactModule: ModuleInterface {
     
     typealias View = EditContactView
     typealias Presenter = EditContactPresenter

@@ -47,7 +47,7 @@ protocol HomeViewPresenterInterface: ViewPresenterInterface {
 
 // MARK: - name builder
 
-final class HomeModule: ModuleInterface {
+class HomeModule: ModuleInterface {
 
     typealias View = HomeView
     typealias Presenter = HomePresenter
