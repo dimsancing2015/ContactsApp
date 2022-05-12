@@ -2,4 +2,4 @@
 Contacts App
 
 
-Development with VIPER Architecture using rxswift and moya for network!
+Development with VIPER Architecture!
