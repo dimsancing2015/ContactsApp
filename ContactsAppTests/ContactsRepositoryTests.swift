@@ -10,7 +10,7 @@ import CoreData
 @testable import ContactsApp
 
 class ContactsRepositoryTests: XCTestCase {
-
+    
     var contactsRepository: ContactsRepository!
     
     override func setUp() {
@@ -64,15 +64,15 @@ class ContactsRepositoryTests: XCTestCase {
     }
     
     
-        func test_update_contact(){
+    func test_update_contact(){
+        
+        let items = contactsRepository.find(id: 123)
+        let _: () = contactsRepository.update(id: 123, firstName: "Peter", lastName: "Lim")
+        let itemsFetched = contactsRepository.find(id: 123)
+        
+        XCTAssertEqual(items?.firstName,itemsFetched?.firstName)
+        XCTAssertEqual(items?.lastName, itemsFetched?.lastName)
+        
+    }
     
-            let items = contactsRepository.find(id: 123)
-            let updateContact2: () = contactsRepository.update(id: 123, firstName: "Peter", lastName: "Lim")
-            let itemsFetched = contactsRepository.find(id: 123)
-            
-            XCTAssertEqual(items?.firstName,itemsFetched?.firstName)
-            XCTAssertEqual(items?.lastName, itemsFetched?.lastName)
-    
-        }
-
 }

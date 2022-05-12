@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2C687B1E282CE9F600044CA6 /* CreateContactInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B1D282CE9F600044CA6 /* CreateContactInteractorTests.swift */; };
 		2C687B20282CEB9100044CA6 /* EditContactInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B1F282CEB9100044CA6 /* EditContactInteractorTests.swift */; };
+		2C687B23282CF9D600044CA6 /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B22282CF9D600044CA6 /* HomeRouterTests.swift */; };
+		2C687B26282CFB3900044CA6 /* EditContactRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B25282CFB3900044CA6 /* EditContactRouterTests.swift */; };
+		2C687B29282CFC7700044CA6 /* ContactDetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B28282CFC7700044CA6 /* ContactDetailRouterTests.swift */; };
 		2C6A2E13282BFE0300216088 /* CreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E12282BFE0300216088 /* CreateResponse.swift */; };
 		2C6A2E22282C172000216088 /* ContactsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E21282C172000216088 /* ContactsRepositoryTests.swift */; };
 		2C6A2E24282C188000216088 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E23282C188000216088 /* HomeInteractorTests.swift */; };
@@ -79,6 +82,9 @@
 /* Begin PBXFileReference section */
 		2C687B1D282CE9F600044CA6 /* CreateContactInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactInteractorTests.swift; sourceTree = "<group>"; };
 		2C687B1F282CEB9100044CA6 /* EditContactInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactInteractorTests.swift; sourceTree = "<group>"; };
+		2C687B22282CF9D600044CA6 /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
+		2C687B25282CFB3900044CA6 /* EditContactRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactRouterTests.swift; sourceTree = "<group>"; };
+		2C687B28282CFC7700044CA6 /* ContactDetailRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailRouterTests.swift; sourceTree = "<group>"; };
 		2C6A2E12282BFE0300216088 /* CreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResponse.swift; sourceTree = "<group>"; };
 		2C6A2E21282C172000216088 /* ContactsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRepositoryTests.swift; sourceTree = "<group>"; };
 		2C6A2E23282C188000216088 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
@@ -177,6 +183,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2C687B21282CF9AD00044CA6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A2E23282C188000216088 /* HomeInteractorTests.swift */,
+				2C687B22282CF9D600044CA6 /* HomeRouterTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2C687B24282CFB1D00044CA6 /* EditContact */ = {
+			isa = PBXGroup;
+			children = (
+				2C687B1F282CEB9100044CA6 /* EditContactInteractorTests.swift */,
+				2C687B25282CFB3900044CA6 /* EditContactRouterTests.swift */,
+			);
+			path = EditContact;
+			sourceTree = "<group>";
+		};
+		2C687B27282CFC5200044CA6 /* ContactDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2C687B28282CFC7700044CA6 /* ContactDetailRouterTests.swift */,
+			);
+			path = ContactDetail;
+			sourceTree = "<group>";
+		};
+		2C687B2A282CFCF600044CA6 /* CreateContact */ = {
+			isa = PBXGroup;
+			children = (
+				2C687B1D282CE9F600044CA6 /* CreateContactInteractorTests.swift */,
+			);
+			path = CreateContact;
+			sourceTree = "<group>";
+		};
 		2CA9582F282B6A2D001F109D = {
 			isa = PBXGroup;
 			children = (
@@ -222,11 +262,12 @@
 		2CA95854282B6A30001F109D /* ContactsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				2C687B2A282CFCF600044CA6 /* CreateContact */,
+				2C687B27282CFC5200044CA6 /* ContactDetail */,
+				2C687B24282CFB1D00044CA6 /* EditContact */,
+				2C687B21282CF9AD00044CA6 /* Home */,
 				2CA95855282B6A30001F109D /* ContactsAppTests.swift */,
 				2C6A2E21282C172000216088 /* ContactsRepositoryTests.swift */,
-				2C6A2E23282C188000216088 /* HomeInteractorTests.swift */,
-				2C687B1D282CE9F600044CA6 /* CreateContactInteractorTests.swift */,
-				2C687B1F282CEB9100044CA6 /* EditContactInteractorTests.swift */,
 			);
 			path = ContactsAppTests;
 			sourceTree = "<group>";
@@ -679,7 +720,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6A2E24282C188000216088 /* HomeInteractorTests.swift in Sources */,
+				2C687B26282CFB3900044CA6 /* EditContactRouterTests.swift in Sources */,
+				2C687B23282CF9D600044CA6 /* HomeRouterTests.swift in Sources */,
 				2C687B20282CEB9100044CA6 /* EditContactInteractorTests.swift in Sources */,
+				2C687B29282CFC7700044CA6 /* ContactDetailRouterTests.swift in Sources */,
 				2C6A2E22282C172000216088 /* ContactsRepositoryTests.swift in Sources */,
 				2CA95856282B6A30001F109D /* ContactsAppTests.swift in Sources */,
 				2C687B1E282CE9F600044CA6 /* CreateContactInteractorTests.swift in Sources */,
