@@ -36,7 +36,7 @@ extension EditContactInteractor: EditContactInteractorPresenterInterface {
     
     private func updateLocalStorage(id: Int, firstName: String, lastName: String) {
         let contacts = contactsRepository.findUser(id: id)
-        if contacts!.id != nil {
+        if contacts != nil {
             contactsRepository.update(id: id, firstName: firstName, lastName: lastName)
         }
         

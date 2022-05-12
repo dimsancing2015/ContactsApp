@@ -22,7 +22,11 @@ final class CreateContactView: UIViewController, ViewInterface {
     }
     
     @IBAction func btnCreate(_ sender: Any) {
-        self.presenter.createContact(firstName: txtFirstName.text!, lastName: txtLastName.text!)
+        if txtFirstName.text!.isEmpty || txtLastName.text!.isEmpty {
+            self.alert(message: "Enter First and Last Name")
+        }else{
+            self.presenter.createContact(firstName: txtFirstName.text!, lastName: txtLastName.text!)
+        }
     }
 }
 
@@ -36,5 +40,11 @@ extension CreateContactView: CreateContactViewPresenterInterface {
         
     }
     
+    func alert(message: String){
+        let alert = UIAlertController(title: "ContactsApp", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     
 }
