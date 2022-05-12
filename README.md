@@ -1,5 +1,5 @@
 # ContactsApp
-Contacts App
+Contacts App (code with 100% swift language)
 
 
 Development with VIPER Architecture!
