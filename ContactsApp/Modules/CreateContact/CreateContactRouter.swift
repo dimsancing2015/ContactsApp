@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class CreateContactRouter: RouterInterface {
+class CreateContactRouter: RouterInterface {
     weak var presenter: CreateContactPresenterRouterInterface!
     weak var viewController: UIViewController?
 }

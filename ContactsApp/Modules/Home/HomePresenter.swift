@@ -11,7 +11,7 @@ final class HomePresenter: PresenterInterface {
 
     var router: HomeRouterPresenterInterface!
     var interactor: HomeInteractorPresenterInterface!
-    weak var view: HomeViewPresenterInterface!
+    var view: HomeViewPresenterInterface!
 
 }
 

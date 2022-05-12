@@ -29,7 +29,7 @@ extension CreateContactPresenter: CreateContactPresenterInteractorInterface {
 extension CreateContactPresenter: CreateContactPresenterViewInterface {
     
     func createContact(firstName: String, lastName: String) {
-        interactor.createContact(firstName: firstName, lastName: lastName)
+        interactor?.createContact(firstName: firstName, lastName: lastName)
     }
     
     

@@ -29,7 +29,7 @@ extension EditContactPresenter: EditContactPresenterInteractorInterface {
 extension EditContactPresenter: EditContactPresenterViewInterface {
     
     func saveEditContact(id: Int, firstName: String, lastName: String) {
-        interactor.updateContact(id: id, firstName: firstName, lastName: lastName)
+        interactor?.updateContact(id: id, firstName: firstName, lastName: lastName)
     }
     
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class HomeRouter: RouterInterface {
+class HomeRouter: RouterInterface {
     weak var presenter: HomePresenterRouterInterface!
     weak var viewController: UIViewController?
 }
