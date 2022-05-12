@@ -19,7 +19,6 @@ extension ContactDetailRouter: ContactDetailRouterPresenterInterface {
         view.modalPresentationStyle = .fullScreen
         viewController?.present(view, animated: true)
     }
-    
 }
 
 

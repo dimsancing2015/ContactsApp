@@ -42,7 +42,7 @@ class ContactsRepository {
     }
     
     
-    func findUser(id: Int) -> Contacts? {
+    func find(id: Int) -> Contacts? {
         
         let managedContext = ContactsRepository.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contacts")

@@ -10,7 +10,7 @@
 		2C687B1E282CE9F600044CA6 /* CreateContactInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B1D282CE9F600044CA6 /* CreateContactInteractorTests.swift */; };
 		2C687B20282CEB9100044CA6 /* EditContactInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687B1F282CEB9100044CA6 /* EditContactInteractorTests.swift */; };
 		2C6A2E13282BFE0300216088 /* CreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E12282BFE0300216088 /* CreateResponse.swift */; };
-		2C6A2E22282C172000216088 /* contactsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E21282C172000216088 /* contactsRepositoryTests.swift */; };
+		2C6A2E22282C172000216088 /* ContactsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E21282C172000216088 /* ContactsRepositoryTests.swift */; };
 		2C6A2E24282C188000216088 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2E23282C188000216088 /* HomeInteractorTests.swift */; };
 		2CA9583C282B6A2D001F109D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9583B282B6A2D001F109D /* AppDelegate.swift */; };
 		2CA9583E282B6A2D001F109D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9583D282B6A2D001F109D /* SceneDelegate.swift */; };
@@ -80,7 +80,7 @@
 		2C687B1D282CE9F600044CA6 /* CreateContactInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactInteractorTests.swift; sourceTree = "<group>"; };
 		2C687B1F282CEB9100044CA6 /* EditContactInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactInteractorTests.swift; sourceTree = "<group>"; };
 		2C6A2E12282BFE0300216088 /* CreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResponse.swift; sourceTree = "<group>"; };
-		2C6A2E21282C172000216088 /* contactsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsRepositoryTests.swift; sourceTree = "<group>"; };
+		2C6A2E21282C172000216088 /* ContactsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRepositoryTests.swift; sourceTree = "<group>"; };
 		2C6A2E23282C188000216088 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		2CA95838282B6A2D001F109D /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA9583B282B6A2D001F109D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA95855282B6A30001F109D /* ContactsAppTests.swift */,
-				2C6A2E21282C172000216088 /* contactsRepositoryTests.swift */,
+				2C6A2E21282C172000216088 /* ContactsRepositoryTests.swift */,
 				2C6A2E23282C188000216088 /* HomeInteractorTests.swift */,
 				2C687B1D282CE9F600044CA6 /* CreateContactInteractorTests.swift */,
 				2C687B1F282CEB9100044CA6 /* EditContactInteractorTests.swift */,
@@ -680,7 +680,7 @@
 			files = (
 				2C6A2E24282C188000216088 /* HomeInteractorTests.swift in Sources */,
 				2C687B20282CEB9100044CA6 /* EditContactInteractorTests.swift in Sources */,
-				2C6A2E22282C172000216088 /* contactsRepositoryTests.swift in Sources */,
+				2C6A2E22282C172000216088 /* ContactsRepositoryTests.swift in Sources */,
 				2CA95856282B6A30001F109D /* ContactsAppTests.swift in Sources */,
 				2C687B1E282CE9F600044CA6 /* CreateContactInteractorTests.swift in Sources */,
 			);
@@ -910,7 +910,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ULMJ729MS3;
+				DEVELOPMENT_TEAM = 3DDU9EESV6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -931,7 +931,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ULMJ729MS3;
+				DEVELOPMENT_TEAM = 3DDU9EESV6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -951,7 +951,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ULMJ729MS3;
+				DEVELOPMENT_TEAM = 3DDU9EESV6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.ContactsAppUITests;
@@ -970,7 +970,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ULMJ729MS3;
+				DEVELOPMENT_TEAM = 3DDU9EESV6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.ContactsAppUITests;
