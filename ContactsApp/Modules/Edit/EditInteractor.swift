@@ -30,15 +30,14 @@ extension EditInteractor: EditInteractorPresenterInterface {
                 print("update fial >>>", error)
                 self!.presenter.update(message: "Failed Contact Information")
             }
-            
         }
     }
     
     private func updateLocalStorage(id: Int, firstName: String, lastName: String) {
-        let contacts = contactsRepository.find(id: id)
-        if contacts != nil {
-            contactsRepository.update(id: id, firstName: firstName, lastName: lastName)
-        }
-        
+        contactsRepository.create(id: id, firstName: firstName, lastName: lastName)
+//        let contacts = contactsRepository.find(id: id)
+//        if contacts != nil {
+//            contactsRepository.update(id: id, firstName: firstName, lastName: lastName)
+//        }
     }
 }
